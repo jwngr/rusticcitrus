@@ -1,6 +1,6 @@
 # Rustic Citrus
 
-Make sense out of alphabet stew with this addictive word game[available on the Windows
+Make sense out of alphabet stew with this addictive word game [available on the Windows
 Store](http://apps.microsoft.com/windows/en-us/app/rustic-citrus/c7f73eae-9de1-48ef-a99d-6a61105d8349).
 
 
