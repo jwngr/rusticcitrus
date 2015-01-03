@@ -1,4 +1,7 @@
 $(function() {
+  // Connect to Firebase
+  var rootRef = new Firebase("https://rusticcitrus.firebaseio.com");
+
   $("#mainMenuScreenshot").fadeIn(1000, function() {
     $(this).attr("style", "display: block");
   });
@@ -154,36 +157,24 @@ $(function() {
   /* Adds the email in the email form to the database */
   $("#emailFormSubmitButton").on("click", addEmailToDatabase);
   function addEmailToDatabase() {
-    // If the email is valid, add the email to the database
+    // Get the value of the email input
     var email = $("#emailInput").val();
 
-    // Remove the click event from the form's submit button so we don't accidentally add the same email twice
-    $("#emailFormSubmitButton").off("click");
-
-    // Add the email to the database
-    $.ajax({
-      type: "POST",
-      url: "../php/addEmail.php",
-      dataType: "text",
-      data: {
-        email: email
-      },
-      success: function (response) {
-        // If we successfully inserted the email into the database, show the success message
-        if (response == "success") {
+    // Validate the email
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(email)) {
+      rootRef.child("rcWebsiteEmailFormEmails").push(email, function(error) {
+        if (error) {
+          // TODO: add a different error message
+          $("#invalidEmailWarning").fadeIn(400);
+        } else {
           $("#emailForm").fadeOut(400, function() {
             $("#emailFormSuccessMessage").fadeIn(400);
           });
         }
-
-        // Otherwise, show the invalid email warning and turn the click event listener back on for the form's submit button
-        else {
-          $("#invalidEmailWarning").fadeIn(400);
-          $("#emailFormSubmitButton").on("click", addEmailToDatabase);
-        }
-      },
-      error: function (xhr, ajaxOptions, thrownError){
-      }
-    });
+      });
+    } else {
+      $("#invalidEmailWarning").fadeIn(400);
+    }
   };
 });
