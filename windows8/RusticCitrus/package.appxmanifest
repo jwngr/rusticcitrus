@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="22571FloatingHouseStudios.RusticCitrus" Version="1.2.0.0" Publisher="CN=92331DD4-EFAA-4894-A1C7-60A2F1E5AD84" />
+  <Properties>
+    <DisplayName>Rustic Citrus</DisplayName>
+    <PublisherDisplayName>Floating House Studios</PublisherDisplayName>
+    <Logo>resources\images\logos\storeLogos\storeLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <m2:VisualElements DisplayName="Rustic Citrus" Description="Rustic Citrus is a fast-paced word jumble game. Your goal is to find all the words that can be made from the letters you are given. Find a word that uses all the available letters to move on to the next round and get your score on the leaderboard!" BackgroundColor="#F58722" ForegroundText="light" ToastCapable="true" Square150x150Logo="resources\images\logos\defaultTileLogos\defaultTileLogo.png" Square30x30Logo="resources\images\logos\smallLogos\smallLogo.png">
+        <m2:LockScreen Notification="badgeAndTileText" BadgeLogo="resources\images\logos\badgeLogos\badgeLogo.png" />
+        <m2:DefaultTile ShortName="Rustic Citrus" Wide310x150Logo="resources\images\logos\wideTileLogos\wideTileLogo.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:InitialRotationPreference>
+          <m2:Rotation Preference="landscape" />
+        </m2:InitialRotationPreference>
+        <m2:SplashScreen BackgroundColor="#F58722" Image="resources\images\logos\splashScreens\splashScreen.png" />
+      </m2:VisualElements>
+      <ApplicationContentUriRules>
+        <Rule Match="https://auth.firebase.com/auth/channel" Type="include" />
+      </ApplicationContentUriRules>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" StartPage="updateLiveTileBackgroundTask.js">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

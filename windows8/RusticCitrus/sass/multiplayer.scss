@@ -1,0 +1,106 @@
+﻿/********************/
+/*  SASS VARIABLES  */
+/********************/
+@import "../colors";
+
+/*****************/
+/*  VIEW STATES  */
+/*****************/
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+    #achievements {
+        display: none;    
+    }
+
+    #unplayableViewStateWarning {
+        display: block;
+    }
+
+    #playableAction:after {
+        content: "Unsnap"
+    }
+}
+
+@media screen and (-ms-view-state: snapped) {
+    #achievements {
+        display: none;    
+    }
+
+    #unplayableViewStateWarning {
+        display: block;
+    }
+
+    #playableAction:after {
+        content: "Unsnap"
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    #achievements {
+        display: none;    
+    }
+
+    #unplayableViewStateWarning {
+        display: block;
+    }
+
+    #playableAction:after {
+        content: "Rotate"
+    }
+}
+
+
+/**********************/
+/*  HIGH SCORES LIST  */
+/**********************/
+#achievementsListView
+{
+    height: 100%;
+    width: 100%;
+
+    .win-surface {
+        margin-left: 50px;
+        margin-right: 70px;
+    }
+
+    .achievementsListItem
+    {
+        width: 400px;
+        height: 80px;
+        padding: 5px;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 1fr;
+        background-color: $orange;
+
+        div
+        {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+            -ms-grid-column-span: 1;
+            -ms-grid-row-span: 1;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 30px;
+            margin: -5px 0 0 5px;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 20px;
+            margin: 35px 0 0 6px;
+        }
+
+        .lockIcon {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+        }
+    }
+}

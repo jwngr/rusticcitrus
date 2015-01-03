@@ -1,0 +1,48 @@
+﻿Acknowledgements and special thanks to the following:
+
+    Amanda Jonovski - Graphic designer who created all the assets for the game
+	    http://www.linkedin.com/pub/amanda-jonovski/1b/52a/115
+
+    David Isbitski - Developer of original code template from "Space Cadet" tutorial
+        http://channel9.msdn.com/Events/Windows-Camp/MSDN-Webcast-Series-Building-Windows-8-Metro-Style-Apps
+
+	Dmitry Baranovskiy - Developer of RaphaelJS, which is a JavaScript library used throughout the game for vector graphics
+        http://raphaeljs.com/
+
+    Rico Sta. Cruz - Developer of Transit, which is a JavaScript library used throughout the game for animations
+        http://ricostacruz.com/jquery.transit/
+
+    Podington Bear - Creator of "Wurlywind" which is used at the main menu music
+        http://freemusicarchive.org/music/Podington_Bear/Woodwinds/Wurlywind
+
+    Kevin MacLeod - Creator of "Local Forecast" which is used as the game board music
+        http://incompetech.com/music/royalty-free/index.html?feels%5B%5D=Bouncy&Search=Search+by+Feel
+
+	Kevin Atkinson - Creator or SCOWL word lists from which my dictionary was made
+		http://wordlist.sourceforge.net/scowl-readme
+
+    Creators of fonts used in the game board:
+        Vernon Adams - Creator of the Pacifico font face
+            http://www.fontsquirrel.com/fonts/pacifico
+      
+        Vic Fieger - Creator of Edo font face
+            http://www.dafont.com/edo.font
+
+    Creators of sound effects used on the game board:
+        Intermedia Design Graphics
+            http://www.flashkit.com/soundfx/Interfaces/Clicks/shclick_-Intermed-495/index.php (shuffle)
+
+        BeatSuite.com
+            http://www.flashkit.com/soundfx/Interfaces/Pops/Pop_26-S_Bainbr-7954/index.php (guess/unguess)
+            http://www.flashkit.com/soundfx/Interfaces/Beeps/Buzz_But-wwwbeat-8523/index.php (time running out)
+
+        Matthieu Chavigny
+            http://www.flashkit.com/soundfx/Interfaces/Beeps/Beep_tim-Matthieu-8588/index.php (correct guess)
+
+        socreative.tv
+            http://www.flashkit.com/soundfx/Interfaces/Beeps/Button_B-socreati-8992/index.php (incorrect guess)
+
+        SoundBible.com
+            http://soundbible.com/1495-Basketball-Buzzer.html (round over)
+
+TODO: update!!!

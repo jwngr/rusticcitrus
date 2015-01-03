@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rustic Citrus | Games</title>
+
+        <!-- Metadata -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <!-- Custom CSS references -->
+        <link href="gamesHub.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="gamesHub fragment">
+            <!-- Page header -->
+            <header aria-label="Header content" role="banner">
+                <button data-win-control="WinJS.UI.BackButton"></button>
+                <h1 class="titlearea win-type-ellipsis">
+                    <span class="pagetitle">Games</span>
+                </h1>
+            </header>
+
+            <!-- Main content -->
+            <section aria-label="Main content" role="main">
+                <!-- New game search box -->
+                <div id="newGameSearchBox"
+                     data-win-control="WinJS.UI.SearchBox"
+                     data-win-options="{
+                     focusOnKeyboardInput: true,
+                     placeholderText: 'Search for an opponent to play',
+                     searchHistoryContext: 'newGame',
+                     searchHistoryDisabled: true
+                 }"></div>
+
+                <div class="hub" data-win-control="WinJS.UI.Hub">
+                    <!-- Single player games section -->
+                    <div id="singlePlayerGamesSection" data-win-control="WinJS.UI.HubSection" data-win-options="{ isHeaderStatic: true, header: 'Single Player' }">
+                        <!-- Single player games list item template -->
+                        <div id="singlePlayerGamesListItemTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                            <div class="gamesListItem">
+                                <div class="newGameListItem" data-win-bind="style.display: isPlaceholder RC.BindingConverters.showPlaceholderListItem">
+                                    <p>New Game</p>
+                                </div>
+                                <div data-win-bind="style.display: isPlaceholder RC.BindingConverters.showNormalListItem">
+                                    <p class="score" data-win-bind="textContent: game.score RC.BindingConverters.displayPrettyScore"></p>
+                                    <p class="numRoundsCompleted" data-win-bind="textContent: game.numRoundsCompleted RC.BindingConverters.displayNumRoundsCompleted"></p>
+                                    <p class="timeRemaining" data-win-bind="textContent: game.currentRound.secondsRemaining RC.BindingConverters.displayTimeRemaining"></p>
+                                </div>
+                                <p class="numLettersContainer"></p>
+                                <p class="numLetters" data-win-bind="textContent: game.numLetters"></p>
+                            </div>
+                        </div>
+
+                        <!-- Single player games list view -->
+                        <div id="singlePlayerGamesListView"
+                             data-win-control="WinJS.UI.ListView"
+                             data-win-options="{
+                                itemTemplate: select('#singlePlayerGamesListItemTemplate'),
+                                tapBehavior: 'invoke',
+                                swipeBehavior: 'select',
+                                selectionMode: 'multi',
+                                oniteminvoked: RC.startSinglePlayerGame,
+                                onselectionchanging: RC.handleSinglePlayerGameListItemSelection,
+                                onselectionchanged: RC.toggleGamesHubAppBarVisibility,
+                                layout: {type: WinJS.UI.GridLayout}
+                        }"></div>
+                    </div>
+                    
+                    <!-- Multiplayer games list (your turn)-->
+                    <div class="yourTurnMultiplayerGamesSection" data-win-control="WinJS.UI.HubSection" data-win-options="{ isHeaderStatic: true, header: 'Multiplayer - Your Turn' }">
+                        <!-- Multiplayer games list (your turn) item template -->
+                        <div id="yourTurnMultiplayerGamesListItemTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                            <div class="multiplayerGamesListItem">
+                                <div class="newGameListItem" data-win-bind="style.display: isPlaceholder RC.BindingConverters.showPlaceholderListItem">
+                                    <p>New Game</p>
+                                </div>
+                                <div data-win-bind="style.display: isPlaceholder RC.BindingConverters.showNormalListItem">
+                                    <img src="#" data-win-bind="alt: opponentName; src: opponentImageUrl" />
+                                    <div>
+                                        <p class="opponentName" data-win-bind="innerText: opponentName"></p>
+                                        <p class="scoreText" data-win-bind="innerText: scoreText"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Multiplayer games list (your turn) view -->
+                        <div id="yourTurnMultiplayerGamesListView"
+                             data-win-control="WinJS.UI.ListView"
+                             data-win-options="{
+                                itemTemplate: select('#yourTurnMultiplayerGamesListItemTemplate'),
+                                tapBehavior: 'invoke',
+                                swipeBehavior: 'select',
+                                selectionMode: 'multi',
+                                oniteminvoked: RC.loadMultiplayerGameSummary,
+                                onselectionchanging: RC.handleMultilayerGameListItemSelection,
+                                onselectionchanged: RC.toggleGamesHubAppBarVisibility,
+                                layout: {type: WinJS.UI.GridLayout}
+                        }"></div>
+                    </div>
+
+                    <!-- Multiplayer games list (their turn)-->
+                    <div class="theirTurnMultiplayerGamesSection" data-win-control="WinJS.UI.HubSection" data-win-options="{ isHeaderStatic: true, header: 'Multiplayer - Their Turn' }">
+                        <!-- Multiplayer games list (their turn) item template -->
+                        <div id="theirTurnMultiplayerGamesListItemTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                            <div class="multiplayerGamesListItem">
+                                <div>
+                                    <img src="#" data-win-bind="alt: opponentName; src: opponentImageUrl" />
+                                    <div>
+                                        <p class="opponentName" data-win-bind="innerText: opponentName"></p>
+                                        <p class="scoreText" data-win-bind="innerText: scoreText"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Multiplayer games list (their turn) view -->
+                        <div id="theirTurnMultiplayerGamesListView"
+                             data-win-control="WinJS.UI.ListView"
+                             data-win-options="{
+                                itemTemplate: select('#theirTurnMultiplayerGamesListItemTemplate'),
+                                tapBehavior: 'invoke',
+                                swipeBehavior: 'select',
+                                selectionMode: 'multi',
+                                oniteminvoked: RC.loadMultiplayerGameSummary,
+                                onselectionchanging: RC.handleMultilayerGameListItemSelection,
+                                onselectionchanged: RC.toggleGamesHubAppBarVisibility,
+                                layout: {type: WinJS.UI.GridLayout}
+                        }"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- App bar -->
+            <div id="gamesHubAppBar" data-win-control="WinJS.UI.AppBar" data-win-options="">
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{
+                        id: 'deleteGamesAppBarButton',
+                        label: 'Delete',
+                        icon: 'delete',
+                        section: 'selection',
+                        tooltip: 'Delete'
+                    }"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{
+                        id: 'forfeitGamesAppBarButton',
+                        label: 'Forfeit',
+                        icon: 'flag',
+                        section: 'selection',
+                        tooltip: 'Forfeit'
+                    }"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{
+                        id: 'clearSelectionAppBarButton',
+                        label: 'Clear selection',
+                        icon: 'clearselection',
+                        section: 'selection',
+                        tooltip: 'Clear selection'
+                    }"></button>
+            </div>
+
+            <!-- Delete selected games confirmation flyout -->
+            <div id="confirmDeleteSelectedGamesFlyout" class="appBarFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{ Confirm delete selected games flyout }">
+                <p>Are you sure you want to delete the selected game<span class="pluralizer">s</span>?</p>
+                <button id="confirmDeleteSelectedGamesButton">Yes</button>
+                <button id="cancelDeleteSelectedGamesButton">No</button>
+            </div>
+
+            <!-- Forfeit selected games confirmation flyout -->
+            <div id="confirmForfeitSelectedGamesFlyout" class="appBarFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{ Confirm forfeit selected games flyout }">
+                <p>Are you sure you want to forfeit the selected game<span class="pluralizer">s</span>?</p>
+                <button id="confirmForfeitSelectedGamesButton">Yes</button>
+                <button id="cancelForfeitSelectedGamesButton">No</button>
+            </div>
+        </div>
+
+        <!-- Custom JS references -->
+        <script src="gamesHub.js" async></script>
+        <script src="singlePlayerGames.js" async></script>
+        <script src="ms-appx:///common/js/wordList.js" async></script>
+    </body>
+</html>

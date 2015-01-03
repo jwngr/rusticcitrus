@@ -1,0 +1,162 @@
+/*************/
+/*  IMPORTS  */
+/*************/
+/************/
+/*  COLORS  */
+/************/
+/*****************/
+/*  BREAKPOINTS  */
+/*****************/
+/***************/
+/*  VARIABLES  */
+/***************/
+/************/
+/*  STYLES  */
+/************/
+body {
+  min-width: 500px;
+  min-height: 750px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#mainMenuButtonsContainer img, #submenuButtonsContainer img, #rusticCitrusLogo, #floatingHouseStudiosLogo {
+  opacity: 0;
+}
+
+#mainMenuButtonsContainer img, #submenuButtonsContainer img {
+  cursor: pointer;
+}
+
+#centerContainer, #rusticCitrusLogo, #mainMenuButtonsContainer {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+#centerContainer {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+
+#centerContainer {
+  width: 940px;
+  height: 750px;
+}
+
+#rusticCitrusLogo {
+  width: 576px;
+}
+
+#mainMenuButtonsContainer {
+  text-align: center;
+  bottom: 0px;
+}
+#mainMenuButtonsContainer img {
+  width: 275px;
+  height: 275px;
+}
+#mainMenuButtonsContainer img:not(:last-child) {
+  margin-right: 75px;
+}
+
+#submenuButtonsContainer {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}
+#submenuButtonsContainer img {
+  width: 80px;
+  height: 80px;
+}
+#submenuButtonsContainer img:not(:last-child) {
+  margin-right: 20px;
+}
+
+#floatingHouseStudiosLogo {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  width: 196px;
+  height: 125px;
+}
+
+@media (max-height: 750px) {
+  #centerContainer {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #submenuButtonsContainer {
+    top: 620px;
+  }
+
+  #floatingHouseStudiosLogo {
+    top: 575px;
+  }
+}
+@media (max-height: 800px) {
+  #centerContainer {
+    height: 700px;
+  }
+}
+@media (max-width: 1700px) and (min-width: 1350px) {
+  #submenuButtonsContainer {
+    right: 25px;
+    bottom: 25px;
+  }
+  #submenuButtonsContainer img {
+    display: block;
+  }
+  #submenuButtonsContainer img:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  #floatingHouseStudiosLogo {
+    width: 150px;
+    height: 100px;
+    left: 25px;
+    bottom: 25px;
+  }
+}
+@media (max-width: 1350px) and (min-width: 800px) {
+  #rusticCitrusLogo {
+    width: 450px;
+  }
+
+  #centerContainer {
+    width: 708px;
+    height: 600px;
+    padding-bottom: 150px;
+  }
+
+  #mainMenuButtonsContainer {
+    bottom: 200px;
+  }
+  #mainMenuButtonsContainer img {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (max-width: 800px) {
+  #rusticCitrusLogo {
+    width: 400px;
+  }
+
+  #centerContainer {
+    width: 400px;
+    height: 700px;
+  }
+
+  #mainMenuButtonsContainer {
+    bottom: 150px;
+  }
+  #mainMenuButtonsContainer img {
+    width: 150px;
+    height: 150px;
+  }
+}

@@ -1,0 +1,391 @@
+/* line 10, ../sass/mainMenu.scss */
+body {
+  min-width: 325px;
+  min-height: 750px;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 17, ../sass/mainMenu.scss */
+#rusticCitrusLogo, #mainMenuButtonsContainer img, #submenuButtonsContainer img, #floatingHouseStudiosLogo {
+  opacity: 0;
+}
+
+/* line 21, ../sass/mainMenu.scss */
+#centerContainer, #rusticCitrusLogo, #mainMenuButtonsContainer {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+/* line 28, ../sass/mainMenu.scss */
+#centerContainer {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+
+/* line 35, ../sass/mainMenu.scss */
+#centerContainer {
+  width: 940px;
+  height: 750px;
+}
+
+/* line 42, ../sass/mainMenu.scss */
+#rusticCitrusLogo {
+  width: 576px;
+}
+
+/* line 48, ../sass/mainMenu.scss */
+#mainMenuButtonsContainer img, #submenuButtonsContainer img {
+  cursor: pointer;
+}
+
+/* line 53, ../sass/mainMenu.scss */
+#mainMenuButtonsContainer {
+  bottom: 0px;
+}
+/* line 57, ../sass/mainMenu.scss */
+#mainMenuButtonsContainer img {
+  width: 275px;
+  height: 275px;
+}
+/* line 62, ../sass/mainMenu.scss */
+#mainMenuButtonsContainer img:not(:last-child) {
+  margin-right: 50px;
+}
+
+/* line 68, ../sass/mainMenu.scss */
+#submenuButtonsContainer {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}
+/* line 73, ../sass/mainMenu.scss */
+#submenuButtonsContainer img {
+  width: 80px;
+  height: 80px;
+}
+/* line 77, ../sass/mainMenu.scss */
+#submenuButtonsContainer img:not(:last-child) {
+  margin-right: 20px;
+}
+
+/* line 83, ../sass/mainMenu.scss */
+#floatingHouseStudiosLogo {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  width: 196px;
+  height: 125px;
+}
+
+/* line 92, ../sass/mainMenu.scss */
+#helpOverlay {
+  position: absolute;
+  color: #FFF;
+  display: none;
+  border: solid 2px black;
+  padding: 0 30px 0 30px;
+  background-color: #F58722;
+  width: 350px;
+  height: 100%;
+  height: calc(100% - 4px);
+  top: 0;
+  right: 0;
+  overflow-y: scroll;
+  font-family: "Segoe UI", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+}
+
+/* line 108, ../sass/mainMenu.scss */
+#closeHelpOverlayButton {
+  display: block;
+  font-family: "Segoe UI", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+  font-size: 20px;
+  font-weight: 600;
+  border: solid 2px #FFF;
+  background-color: transparent;
+  color: #FFF;
+  width: 200px;
+  height: 75px;
+  margin: 30px auto 30px auto;
+}
+/* line 120, ../sass/mainMenu.scss */
+#closeHelpOverlayButton:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+/* line 124, ../sass/mainMenu.scss */
+#closeHelpOverlayButton:active {
+  background-color: #FFF;
+  color: #000;
+}
+
+@media screen and (max-height: 750px) {
+  /* line 131, ../sass/mainMenu.scss */
+  #centerContainer {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* line 136, ../sass/mainMenu.scss */
+  #submenuButtonsContainer {
+    top: 620px;
+  }
+
+  /* line 140, ../sass/mainMenu.scss */
+  #floatingHouseStudiosLogo {
+    top: 575px;
+  }
+}
+@media screen and (min-width: 1350px) and (max-width: 1700px) {
+  /* line 146, ../sass/mainMenu.scss */
+  #submenuButtonsContainer {
+    right: 25px;
+    bottom: 25px;
+  }
+  /* line 149, ../sass/mainMenu.scss */
+  #submenuButtonsContainer img {
+    display: block;
+  }
+  /* line 152, ../sass/mainMenu.scss */
+  #submenuButtonsContainer img:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  /* line 159, ../sass/mainMenu.scss */
+  #floatingHouseStudiosLogo {
+    width: 150px;
+    height: 100px;
+    left: 25px;
+    bottom: 25px;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1350px) {
+  /* line 168, ../sass/mainMenu.scss */
+  #rusticCitrusLogo {
+    width: 450px;
+  }
+
+  /* line 174, ../sass/mainMenu.scss */
+  #centerContainer {
+    width: 708px;
+    height: 600px;
+    padding-bottom: 150px;
+  }
+
+  /* line 182, ../sass/mainMenu.scss */
+  #mainMenuButtonsContainer {
+    bottom: 200px;
+  }
+  /* line 185, ../sass/mainMenu.scss */
+  #mainMenuButtonsContainer img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* line 191, ../sass/mainMenu.scss */
+  #floatingHouseStudiosLogo {
+    width: 150px;
+    height: 100px;
+    left: 50px;
+    bottom: 50px;
+  }
+}
+@media screen and (min-width: 625px) and (max-width: 800px) {
+  /* line 200, ../sass/mainMenu.scss */
+  #rusticCitrusLogo {
+    width: 400px;
+  }
+
+  /* line 206, ../sass/mainMenu.scss */
+  #centerContainer {
+    width: 600px;
+    height: 700px;
+  }
+
+  /* line 213, ../sass/mainMenu.scss */
+  #mainMenuButtonsContainer {
+    bottom: 200px;
+  }
+  /* line 216, ../sass/mainMenu.scss */
+  #mainMenuButtonsContainer img {
+    width: 162px;
+    height: 162px;
+  }
+
+  /* line 222, ../sass/mainMenu.scss */
+  #floatingHouseStudiosLogo {
+    width: 150px;
+    height: 100px;
+    left: 50px;
+    bottom: 50px;
+  }
+}
+@media screen and (max-width: 625px) {
+  /* line 231, ../sass/mainMenu.scss */
+  body {
+    min-height: 850px;
+  }
+
+  /* line 235, ../sass/mainMenu.scss */
+  #rusticCitrusLogo {
+    width: 270px;
+  }
+
+  /* line 241, ../sass/mainMenu.scss */
+  #centerContainer {
+    width: 300px;
+    height: 95%;
+  }
+
+  /* line 248, ../sass/mainMenu.scss */
+  #mainMenuButtonsContainer {
+    top: 200px;
+    left: 50%;
+    margin-left: -65px;
+  }
+  /* line 253, ../sass/mainMenu.scss */
+  #mainMenuButtonsContainer img {
+    width: 130px;
+    height: 130px;
+  }
+  /* line 257, ../sass/mainMenu.scss */
+  #mainMenuButtonsContainer img:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  /* line 263, ../sass/mainMenu.scss */
+  #submenuButtonsContainer {
+    display: block;
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
+    bottom: 25px;
+  }
+
+  /* line 271, ../sass/mainMenu.scss */
+  #floatingHouseStudiosLogo {
+    display: none;
+  }
+}
+/* Height media queries */
+/*@media screen and (min-height: 800px) and (max-height: 915px) {
+    #rusticCitrusLogo {
+        width: 500px;
+    }
+    
+    %mainMenuLargeOrangeButton {
+        width: 225px;
+        height: 225px;
+    }
+    
+    #mainMenuPlayButton {
+        right: 110px;
+    }
+
+    #mainMenuWindowsStoreButton {
+        left: 110px;
+    }
+}
+
+@media screen and (min-height: 700px) and (max-height: 800px) {
+    #rusticCitrusLogo {
+        width: 420px;
+    }
+    
+    %mainMenuLargeOrangeButton {
+        width: 190px;
+        height: 190px;
+    }
+        
+    #mainMenuPlayButton {
+        right: 90px;
+    }
+
+    #mainMenuWindowsStoreButton {
+        left: 90px;
+    }
+}
+
+@media screen and (min-height: 0px) and (max-height: 700px) {
+    #rusticCitrusLogo {
+        top: 30px;
+        width: 350px;
+    }
+    
+    %mainMenuLargeOrangeButton {
+        bottom: 30px;
+        width: 140px;
+        height: 140px;
+    }
+        
+    #mainMenuPlayButton {
+        right: 70px;
+    }
+
+    #mainMenuWindowsStoreButton {
+        left: 70px;
+    }
+}*/
+/* Width media queries */
+/*@media screen and (min-width: 1300px) and (max-width: 1500px) {
+    #rusticCitrusLogo {
+        width: 500px;
+    }
+    
+    %mainMenuLargeOrangeButton {
+        width: 225px;
+        height: 225px;
+    }
+    
+    #mainMenuPlayButton {
+        right: 70px;
+    }
+
+    #mainMenuWindowsStoreButton {
+        left: 70px;
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1300px) {
+    #rusticCitrusLogo {
+        width: 450px;
+    }
+    
+    %mainMenuLargeOrangeButton {
+        width: 200px;
+        height: 200px;
+    }
+    
+    #mainMenuPlayButton {
+        right: 70px;
+    }
+
+    #mainMenuWindowsStoreButton {
+        left: 70px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #rusticCitrusLogo {
+        top: 25px;
+        width: 400px;
+    }
+    
+    %mainMenuLargeOrangeButton {
+        bottom: 220px;
+        width: 190px;
+        height: 190px;
+    }
+    
+    #mainMenuPlayButton {
+        right: 70px;
+    }
+
+    #mainMenuWindowsStoreButton {
+        left: 70px;
+    }
+}*/

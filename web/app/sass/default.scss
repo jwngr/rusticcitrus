@@ -1,0 +1,39 @@
+/* Normalize */
+* {
+    -ms-touch-action: none;
+}
+
+@viewport {
+    width: device-width;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+/* Game background */
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../resources/images/backgrounds/woodBackground.png");
+    background-size: cover;
+}
+
+/* Hide game overlay menus */
+#mainMenu, #gameBoard, #startGameMenu, #pauseMenu, #gameOverMenu, #nextRoundMenu {
+    display: none;
+}
+
+/* Prevent images from having a blue border in IE */
+img {
+    text-decoration: none;
+    border: 0;
+}
+
+/* Custom fonts */
+@font-face {
+    font-family: "Pacifico";
+    src: url("../fonts/Pacifico.ttf");
+}
+
+

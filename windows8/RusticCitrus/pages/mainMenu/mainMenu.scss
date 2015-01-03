@@ -1,0 +1,225 @@
+﻿/*************/
+/*  IMPORTS  */
+/*************/
+@import "../../common/css/colors";
+
+/*****************/
+/*  BREAKPOINTS  */
+/*****************/
+// TODO: update breakpoints
+@mixin bp($point) { 
+    $bp-heightShort: "(max-height: 750px)";
+	$bp-heightMedium: "(max-height: 800px)";
+
+    $bp-small: "(max-width: 800px)";
+    $bp-medium: "(max-width: 1350px) and (min-width: 800px)";
+	$bp-large: "(max-width: 1700px) and (min-width: 1350px)";
+
+    @if $point == small {
+        @media #{$bp-small} { @content; }
+    }
+    @else if $point == medium {
+        @media #{$bp-medium} { @content; }
+    }
+    @else if $point == large {
+        @media #{$bp-large}  { @content; }
+    }
+	@else if $point == heightShort {
+        @media #{$bp-heightShort}  { @content; }
+    }
+	@else if $point == heightMedium {
+        @media #{$bp-heightMedium}  { @content; }
+    }
+}
+
+
+/***************/
+/*  VARIABLES  */
+/***************/
+$mainMenuOrangeWidth: 275px;
+$mainMenuOrangeHeight: 275px;
+$submenuOrangeWidth: 80px;
+$submenuOrangeHeight: 80px;
+$floatingHouseStudiosLogoWidth: 196px;
+$floatingHouseStudiosLogoHeight: 125px;
+$centerContainerWidth: 940px;
+$centerContainerHeight: 750px;
+
+
+/************/
+/*  STYLES  */
+/************/
+body {
+    min-width: 500px;
+    min-height: 750px;
+    margin: 0px;
+    padding: 0px;
+}
+
+%hidden {
+    opacity: 0;
+}
+
+%orangeButton {
+    @extend %hidden;
+    cursor: pointer;
+}
+
+%centeredHorizontally {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+%centeredVertically {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+
+#centerContainer {
+    @extend %centeredHorizontally;
+    @extend %centeredVertically;
+    width: $centerContainerWidth;
+    height: $centerContainerHeight;
+}
+
+#rusticCitrusLogo {
+    @extend %hidden;
+    @extend %centeredHorizontally;
+    width: 576px;
+}
+
+#mainMenuButtonsContainer {
+    @extend %centeredHorizontally;
+    text-align: center;
+    bottom: 0px;
+    
+    img {
+        @extend %orangeButton;
+        width: $mainMenuOrangeWidth;
+        height: $mainMenuOrangeHeight;
+        
+        &:not(:last-child) {
+            margin-right: 75px;
+        }
+    }
+}
+
+#submenuButtonsContainer {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    
+    img {
+        @extend %orangeButton;
+        width: $submenuOrangeWidth;
+        height: $submenuOrangeHeight;
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+#floatingHouseStudiosLogo {
+    @extend %hidden;
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    width: $floatingHouseStudiosLogoWidth;
+    height: $floatingHouseStudiosLogoHeight;
+}
+
+@include bp("heightShort") {
+    #centerContainer {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    #submenuButtonsContainer {
+        top: $centerContainerHeight - $submenuOrangeHeight - 50;
+    }
+    
+    #floatingHouseStudiosLogo {
+        top: $centerContainerHeight - $floatingHouseStudiosLogoHeight - 50;
+    }
+}
+
+@include bp("heightMedium") {
+    #centerContainer {
+        height: 700px;
+    }
+}
+
+@include bp("large") {
+    #submenuButtonsContainer {
+        right: 25px;
+        bottom: 25px;
+        img {
+            display: block;
+            
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    
+    #floatingHouseStudiosLogo {
+        width: 150px;
+        height: 100px;
+        left: 25px;
+        bottom: 25px;
+    }
+}
+
+@include bp("medium") {
+    #rusticCitrusLogo {
+        width: 450px;
+    }
+    
+    $centerContainerWidth: 708px;
+    $centerContainerHeight: 600px;
+    #centerContainer {
+        width: $centerContainerWidth;
+        height: $centerContainerHeight;
+        padding-bottom: 150px;
+    }
+    
+    $mainMenuOrangeWidth: 200px;
+    $mainMenuOrangeHeight: 200px;
+    #mainMenuButtonsContainer {
+        bottom: 200px;
+        
+        img {
+            width: $mainMenuOrangeWidth;
+            height: $mainMenuOrangeHeight;
+        }
+    }
+}
+
+@include bp("small") {
+    #rusticCitrusLogo {
+        width: 400px;
+    }
+    
+    $centerContainerWidth: 400px;
+    $centerContainerHeight: 700px;
+    #centerContainer {
+        width: $centerContainerWidth;
+        height: $centerContainerHeight;
+    }
+    
+    $mainMenuOrangeWidth: 150px;
+    $mainMenuOrangeHeight: 150px;
+    #mainMenuButtonsContainer {
+        bottom: 150px;
+        
+        img {
+            width: $mainMenuOrangeWidth;
+            height: $mainMenuOrangeHeight;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+﻿/*************/
+/*  IMPORTS  */
+/*************/
+@import "../../common/css/colors";
+
+/*****************/
+/*  VIEW STATES  */
+/*****************/
+// TODO
+
+/***********************/
+/*  ACHIEVEMENTS LIST  */
+/***********************/
+#achievements #achievementsListView
+{
+    height: 100%;
+    width: 100%;
+	
+	.win-surface {
+		margin-left: 50px;
+		margin-right: 70px;
+
+		.win-itemscontainer {
+			width: auto !important;
+
+			.win-itemsblock {
+				height: 75%;
+			}
+		}
+	}
+}
+
+.achievementsListItem
+{
+	width: 400px;
+	height: 80px;
+	padding: 5px;
+	display: -ms-grid;
+	-ms-grid-columns: 1fr;
+	-ms-grid-rows: 1fr;
+	background-color: $orange;
+
+	.name {
+		font-size: 30px;
+		margin: -5px 0 0 5px;
+	}
+
+	.description {
+		font-size: 18px;
+		line-height: 20px;
+		margin: 35px 15px 0 6px;
+	}
+
+	.lockIcon {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		width: 20px;
+		height: 20px;
+	}
+
+    .lockIconContainer {
+        position: absolute;
+        top: -15px;
+        right: 0;
+        border-color: $red $red transparent transparent;
+        border-style: solid;
+        border-width: 30px;
+    }
+}
+
+// TODO: change achievements list items to be ms-grid layout

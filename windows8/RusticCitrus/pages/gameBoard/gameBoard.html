@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rustic Citrus | Game Board</title>
+
+        <!-- Metadata -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <!-- Custom CSS references -->
+        <link href="gameBoard.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="gameBoard fragment">
+            <section aria-label="Main content" role="main">
+                <!-- Game board -->
+                <div id="gameBoard">
+                    <!-- Game information -->
+                    <div id="gameInformation">
+                        <!-- Round -->
+                        <div id="roundContainer">
+                            <p>Round</p>
+                            <p id="round"></p>
+                        </div>
+
+                        <!-- Score -->
+                        <div id="scoreContainer">
+                            <p>Score</p>
+                            <p id="score"></p>
+                        </div>
+
+                        <!-- Time remaining -->
+                        <div id="timeRemainingContainer">
+                            <p>Time</p>
+                            <p id="timeRemaining"></p>
+                        </div>
+                    </div>
+
+                    <!-- Guessed letters plank -->
+                    <div id="guessedLettersPlank" class="sprite"></div>
+ 
+                    <!-- Raphael SVG papers -->
+                    <div id="subsetWordsPaper"></div>
+                    <div id="availableLettersPaper"></div>
+                    <div id="subsetWordsMask"></div>
+
+                    <!-- Game board buttons -->
+                    <div id="pauseGameButton" class="gameBoardButton sprite"></div>
+                    <div id="endRoundButton" class="gameBoardButton sprite endGameButton"></div>
+                    <div id="lastButton" class="gameBoardButton sprite"></div>
+                    <div id="submitButton" class="gameBoardButton sprite"></div>
+                    <div id="shuffleButton" class="gameBoardButton sprite"></div>
+                </div>
+
+                <!-- Pause menu -->
+                <div id="pauseMenu" class="gameOverlayMenu">
+                    <p class="gameOverlayMenuTitle">Game Paused</p>
+                    <div class="gameOverlayMenuButtons">
+                        <input id="pauseMenuSaveAndExitButton" type="button" value="Save & Exit" />
+                        <input id="resumeGameButton" type="button" value="Resume" />
+                    </div>
+                </div>
+
+                <!-- End round menu -->
+                <div id="endRoundMenu" class="gameOverlayMenu">
+                    <p class="gameOverlayMenuTitle"></p>
+                    <div class="gameOverlayMenuButtons">
+                        <input id="endRoundMenuCancelButton" type="button" value="No" />
+                        <input id="endRoundMenuConfirmButton" type="button" value="Yes" />
+                    </div>
+                </div>
+
+                <!-- Game over menu -->
+                <div id="gameOverMenu" class="gameOverlayMenu">
+                    <div id="gameOverMenuNoHighScore">
+                        <p class="gameOverlayMenuTitle">Game Over</p>
+                        <div class="gameOverlayMenuButtons">
+                            <input class="exitButton" type="button" value="Exit" />
+                        </div>
+                    </div>
+                    <div id="gameOverMenuHighScore">
+                        <p class="gameOverlayMenuTitle">Game Over</p>
+                        <p class="gameOverlayMenuSubtext">New high score: <span id="highScorePlace"></span> place!</p>
+                        <div class="gameOverlayMenuButtons">
+                            <input class="exitButton" type="button" value="Exit" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next round menu -->
+                <div id="nextRoundMenu" class="gameOverlayMenu">
+                    <p class="gameOverlayMenuTitle">You got it!</p>
+                    <div class="gameOverlayMenuButtons">
+                        <input id="nextRoundMenuSaveAndExitButton" type="button" value="Save & Exit" />
+                        <input id="nextRoundButton" type="button" value="Next Round" />
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- JS plugin references -->
+        <script src="/common/js/plugins/raphael-2.1.0.min.js" async></script>
+
+        <!-- Custom JS references -->
+        <script src="game.js" async></script>
+        <script src="round.js" async></script>
+        <script src="gameBoard.js" async></script>
+    </body>
+</html>

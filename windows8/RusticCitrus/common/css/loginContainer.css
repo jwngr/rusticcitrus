@@ -1,0 +1,48 @@
+﻿/*************/
+/*  IMPORTS  */
+/*************/
+/************/
+/*  COLORS  */
+/************/
+/*********************/
+/*  LOGIN CONTAINER  */
+/*********************/
+#loginContainer {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 320px;
+  height: 85px;
+  padding: 5px;
+  overflow: hidden;
+  z-index: 100; }
+  #loginContainer img {
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+    float: right;
+    border: solid 3px white;
+    border-radius: 38px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8); }
+  #loginContainer div {
+    margin: 12px 5px 5px 5px;
+    color: #871816;
+    float: right;
+    text-align: right;
+    width: 215px; }
+    #loginContainer div .name {
+      font-size: 26px;
+      margin: 0px;
+      padding: 0px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: bold; }
+    #loginContainer div .username {
+      font-size: 20px;
+      margin: 0px;
+      padding: 0px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: bold; }

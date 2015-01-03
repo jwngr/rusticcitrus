@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rustic Citrus | Play</title>
+
+        <!-- Metadata -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="Rustic Citrus, word game, word, game, puzzle, twist, letters" />
+        <meta name="description" content="Rustic Citrus is a fast-paced, visually beautiful word game where you have two minutes to make as many words as you can from the provided set of letters. Find at least one word which uses every letter to move on to the next round and make your score climb even higher." />
+        <meta name="author" content="Floating House Studios" />
+        <meta name="version" content="1.0" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="../resources/images/favicon.png">
+        <!--[if IE]><link rel="shortcut icon" href="../resources/images/favicon.ico"><![endif]-->
+        
+        <!-- Link to Windows Store from IE modern browser -->
+        <meta name="msApplication-ID" content="22571FloatingHouseStudios.RusticCitrus"/>
+        <meta name="msApplication-PackageFamilyName" content="22571FloatingHouseStudios.RusticCitrus_d5bvdbrxjfkqg"/>
+        
+        <!-- Start screen tile -->
+        <meta name="msapplication-TileColor" content="#F58722"/>
+        <meta name="msapplication-TileImage" content="../resources/images/tileLogo.png"/>
+        
+        <!-- Custom CSS references -->
+        <link type="text/css" rel="stylesheet" href="./css/default.css" />
+        <link type="text/css" rel="stylesheet" href="./css/mainMenu.css" />
+        <link type="text/css" rel="stylesheet" href="./css/gameBoard.css" />
+    </head>
+
+    <body>
+        <span id="dimensions" style="position: absolute; top: 75px; right: 25px; font-size: 20px;"></span>
+        <!-- Main menu -->
+        <div id="mainMenu">
+            <div id="centerContainer">
+                <!-- Rustic Citrus logo -->
+                <img id="rusticCitrusLogo" src="./resources/images/logos/rusticCitrusMainColorLogo.png" />
+                
+                <!-- Main menu buttons -->
+                <div id="mainMenuButtonsContainer">
+                    <img id="mainMenuPlayButton" class="mainMenuOrangeButton" src="./resources/images/buttons/mainMenu/mainMenuPlayButton.png" />
+                    <img id="mainMenuWindowsStoreButton" class="mainMenuOrangeButton" src="./resources/images/buttons/mainMenu/mainMenuWindowsStoreButton.png" />
+                    <img id="mainMenuAchievementsButton" class="mainMenuOrangeButton" src="./resources/images/buttons/mainMenu/mainMenuPlayButton.png" />
+                </div>
+            </div>
+            
+            <!-- Submenu buttons -->
+            <div id="submenuButtonsContainer">
+                <img id="mainMenuMusicButton" class="mainMenuOrangeButton" src="./resources/images/buttons/mainMenu/mainMenuMusicOnButton.png" />
+                <img id="mainMenuSoundEffectsButton" class="mainMenuOrangeButton" src="./resources/images/buttons/mainMenu/mainMenuSoundEffectsOnButton.png" />
+                <img id="mainMenuHelpButton" class="mainMenuOrangeButton" src="./resources/images/buttons/mainMenu/mainMenuHelpButton.png" />
+            </div>
+
+            <!-- Floating House Studios logo -->
+            <img id="floatingHouseStudiosLogo" src="./resources/images/logos/floatingHouseStudiosLogo.png" />
+            
+            <!-- Help -->
+            <div id="helpOverlay">
+                <!-- Goal -->
+                <div>
+                    <h3>Goal</h3>
+                    <ul>
+                        <li>Find all the words of at least three letters which can be made from the letters provided.</li>
+                        <li>To move to the next round, you must find at least one word which uses every letter.</li>
+                    </ul>
+                </div>
+
+                <!-- Scoring -->
+                <div>
+                    <h3>Scoring</h3>
+                    <ul>
+                        <li>You earn 10 points per letter for each word you correctly guess.</li>
+                        <li>A 100 point bonus is given if every word of a certain length is found.</li>
+                        <li>If you find all of the words in a round, you get a 10 point bonus for every second remaining in that round.</li>
+                    </ul>
+                </div>
+
+                <!-- Keyboard shortcuts -->
+                <div>
+                    <h3>Keyboard shortcuts</h3>
+                    <ul>
+                        <li>Submit guess - Enter</li>
+                        <li>Remove last letter - Backspace</li>
+                        <li>Shuffle letters - Spacebar</li>
+                        <li>Last guess - Up arrow</li>
+                        <li>Pause game - Escape</li>
+                    </ul>
+                </div>
+                
+                <!-- Close help button -->
+                <input id="closeHelpOverlayButton" type="button" value="Close Help" />
+            </div>
+        </div>
+        
+        <!-- Game board -->
+        <div id="gameBoard">            
+            <!-- Game information -->
+            <div id="gameInformation">
+                <!-- Round -->
+                <div id="roundContainer">
+                    <p>Round</p>
+                    <p id="round"></p>
+                </div>
+
+                <!-- Score -->
+                <div id="scoreContainer">
+                    <p>Score</p>
+                    <p id="score"></p>
+                </div>
+
+                <!-- Time remaining -->
+                <div id="timeRemainingContainer">
+                    <p>Time</p>
+                    <p id="timeRemaining"></p>
+                </div>
+            </div>
+
+            <!-- Guessed letters plank -->
+            <img id="guessedLettersPlank" src="./resources/images/miscellaneous/guessedLettersPlank.png" />
+            
+            <!-- Raphael SVG papers -->
+            <div id="subsetWordsPaper"></div>
+            <div id="availableLettersPaper"></div>
+            
+            <!-- Game board buttons -->
+            <img id="pauseGameButton" class="gameBoardButton" src="./resources/images/buttons/gameBoard/pauseButton.png" />
+            <img id="clearButton" class="gameBoardButton" src="./resources/images/buttons/gameBoard/clearButton.png" />
+            <img id="lastButton" class="gameBoardButton" src="./resources/images/buttons/gameBoard/lastButton.png" />
+            <img id="submitButton" class="gameBoardButton" src="./resources/images/buttons/gameBoard/submitButton.png" />
+            <img id="shuffleButton" class="gameBoardButton" src="./resources/images/buttons/gameBoard/shuffleButton.png" />
+        </div>
+
+        <!-- Start game menu -->
+        <div id="startGameMenu" class="gameOverlayMenu">
+            <p class="gameOverlayMenuTitle">Difficulty</p>
+            <div class="gameOverlayMenuButtons">
+                <input id="startFiveLetterGameButton" type="button" value="5" />
+                <input id="startSixLetterGameButton" type="button" value="6" />
+                <input id="startSevenLetterGameButton" type="button" value="7 (download only)" />
+            </div>
+        </div>
+        
+        <!-- Pause menu -->
+        <div id="pauseMenu" class="gameOverlayMenu">
+            <p class="gameOverlayMenuTitle">Game Paused</p>
+            <div class="gameOverlayMenuButtons">
+                <input class="downloadGameButton" type="button" value="Download Game" />
+                <input id="resumeGameButton" type="button" value="Resume" />
+            </div>
+        </div>
+
+        <!-- Game over menu -->
+        <div id="gameOverMenu" class="gameOverlayMenu">
+            <p class="gameOverlayMenuTitle">Game Over</p>
+            <div class="gameOverlayMenuButtons">
+                <input class="downloadGameButton" type="button" value="Download Game" />
+                <input class="exitButton" type="button" value="Exit" />
+            </div>
+        </div>
+
+        <!-- Next round menu -->
+        <div id="nextRoundMenu" class="gameOverlayMenu">
+            <p class="gameOverlayMenuTitle">You got it!</p>
+            <div class="gameOverlayMenuButtons">
+                <input class="downloadGameButton" type="button" value="Download Game" />
+                <input id="nextRoundButton" type="button" value="Next Round" />
+            </div>
+        </div>
+
+        <!-- Music -->
+        <audio id="mainMenuMusic" src="./resources/sounds/music/mainMenuMusic.mp3" loop preload="none"></audio>
+        
+        <!-- Hack to preload font -->
+        <div style="font-family:'Pacifico'">&nbsp;</div>
+        
+        <!-- JS plugin references -->
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js" ></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.9/jquery.transit.min.js" ></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.0.1/raphael-min.js" async></script>
+        
+        <!-- Custom JS references -->
+        <script type="text/javascript" src="./js/mainMenu.js" async></script>
+        <script type="text/javascript" src="./js/wordList.js" async></script>
+        <script type="text/javascript" src="./js/game.js" async></script>
+        <script type="text/javascript" src="./js/round.js" async></script>
+        
+        <!-- Analytics -->
+        <!-- <script type="text/javascript" src="../js/analytics.js" async></script> -->
+    </body>
+</html>

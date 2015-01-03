@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rustic Citrus</title>
+
+        <!-- Metadata -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="keywords" content="game, games, word game, word games, letter game, letter games, word, words, puzzle, puzzles, alphabet, TextTwist">
+        <meta name="description" content="Rustic Citrus is a fast-paced, visually beautiful word game where you have two minutes to make as many words as you can from the provided set of letters. Find at least one word which uses every letter to move on to the next round and make your score climb even higher.">
+        <meta name="author" content="Floating House Studios">
+        <meta name="version" content="1.1">
+
+        <!-- WinJS CSS references -->
+        <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+
+        <!-- Custom CSS references -->
+        <link href="default.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <visual version="2"></visual>
+        <!-- Navigation controller -->
+        <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/mainMenu/mainMenu.html'}"></div>
+
+        <!-- Login container -->
+        <div id="loginContainer">
+            <img src="#" />
+            <div>
+                <p class="name"></p>
+                <p class="username"></p>
+            </div>
+        </div>
+
+        <!-- Music -->
+        <audio id="mainMenuMusic" src="/resources/sounds/music/mainMenuMusic.mp3" loop></audio>
+        <audio id="gameBoardMusic" src="/resources/sounds/music/gameBoardMusic.mp3" loop></audio>
+
+        <!-- TODO: remove this -->
+        <!-- Unplayable view state warning (aka snapped, filled, fullscreen portrait) -->
+        <div id="unplayableViewStateWarning">
+            <img src="/resources/images/logos/rusticCitrusMainColorLogo.png" />
+            <p>This game is currently only playable in fullscreen landscape mode. <span id="playableAction"></span> it to continue playing.</p>
+        </div>
+
+        <!-- Options flyout -->
+        <div class="settingsFlyout" data-win-control="WinJS.UI.SettingsFlyout" aria-label="Options" data-win-options="{
+            settingsCommandId: 'optionsSettingsFlyout'
+        }">
+            <div class="win-ui-dark win-header" style="background-color: #F58722">
+                <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+                <div class="win-label">Options</div>
+            </div>
+            <div class="win-content">
+                <!-- Sounds -->
+                <div class="win-settings-section">
+                    <h3>Sounds</h3>
+                    <div id="musicToggleSwitch" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{
+                        title: 'Music'
+                    }"></div>
+                    <div id="soundEffectsToggleSwitch" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{
+                        title: 'Sounds effects'
+                    }"></div>
+                </div>
+
+                <!-- Reset game -->
+                <div id="resetGame" class="win-settings-section">
+                    <h3>Game information</h3>
+                    <label>Reset game data (saved games, high scores, and achievements)</label>
+                    <button id="resetGameDataButton" type="button">Reset</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Reset data confirmation flyout -->
+        <div id="confirmResetDataFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{ Confirm reset data flyout }">
+            <p>Are you sure you want to reset all your data (saved games, high scores, and achievements)?</p>
+            <button id="confirmResetDataButton">Yes</button>
+            <button id="cancelResetDataButton">No</button>
+        </div>
+
+        <!-- Help flyout -->
+        <div class="settingsFlyout" data-win-control="WinJS.UI.SettingsFlyout" aria-label="Help" data-win-options="{
+            settingsCommandId: 'helpSettingsFlyout'
+        }">
+            <div class="win-ui-dark win-header" style="background-color: #F58722">
+                <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+                <div class="win-label">Help</div>
+            </div>
+            <div class="win-content">
+                <!-- Goal -->
+                <div class="win-settings-section">
+                    <h3>Goal</h3>
+                    <ul>
+                        <li>Find all the words of at least three letters which can be made from the letters provided.</li>
+                        <li>To move to the next round, you must find at least one word which uses every letter.</li>
+                    </ul>
+                </div>
+
+                <!-- Scoring -->
+                <div class="win-settings-section">
+                    <h3>Scoring</h3>
+                    <ul>
+                        <li>You earn 10 points per letter for each word you correctly guess.</li>
+                        <li>A 100 point bonus is given if every word of a certain length is found.</li>
+                        <li>If you find all of the words in a round, you get a 10 point bonus for every second remaining in that round.</li>
+                    </ul>
+                </div>
+
+                <!-- Saving and loading games -->
+                <div class="win-settings-section">
+                    <h3>Saving and loading games</h3>
+                    <ul>
+                        <li>Click the "Save & Exit" button to save your current game.</li>
+                        <li>Saved games can be resumed right where you left off by clicking on them in the games list.</li>
+                        <li>Once you resume a saved game, it is removed from the saved games list.</li>
+                    </ul>
+                </div>
+
+                <!-- Keyboard shortcuts -->
+                <div class="win-settings-section">
+                    <h3>Keyboard shortcuts</h3>
+                    <ul>
+                        <li>Submit guess - Enter</li>
+                        <li>Remove last letter - Backspace</li>
+                        <li>Shuffle letters - Spacebar</li>
+                        <li>Last guess - Up arrow</li>
+                        <li>Pause game - Escape</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Credits flyout -->
+        <div class="settingsFlyout" data-win-control="WinJS.UI.SettingsFlyout" aria-label="Credits" data-win-options="{
+            settingsCommandId: 'creditsSettingsFlyout'
+        }">
+            <div class="win-ui-dark win-header" style="background-color: #F58722">
+                <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+                <div class="win-label">Credits</div>
+            </div>
+            <div class="win-content">
+                <!-- Jacob Wenger -->
+                <div class="win-settings-section">
+                    <h3>Programming and gameplay</h3>
+                    <p style="padding-bottom: 5px;">Jacob Wenger</p>
+                    <a href="http://www.jacobawenger.com" target="fix_link_too">Personal Website</a>
+                </div>
+
+                <!-- Amanda Jonovski -->
+                <div class="win-settings-section">
+                    <h3>Graphics</h3>
+                    <p style="padding-bottom: 5px;">Amanda Jonovksi</p>
+                    <a href="http://www.linkedin.com/pub/amanda-jonovski/1b/52a/115" target="fix_link_too">LinkedIn</a>
+                </div>
+
+                <!-- Rustic Citrus -->
+                <div class="win-settings-section">
+                    <h3>Game</h3>
+                    <p style="padding-bottom: 5px;">Rustic Citrus</p>
+                    <a href="http://www.rusticcitrus.com" target="fix_link_too">Game Website</a>
+                </div>
+
+                <!-- Floating House Studios -->
+                <div class="win-settings-section">
+                    <h3>Copyright</h3>
+                    <p style="padding-bottom: 5px;">Floating House Studios &copy; 2013</p>
+                    <!-- TODO: make FHS website -->
+                    <!--<a href="http://www.floatinghousestudios.com" target="fix_link_too">Company Website</a>-->
+                </div>
+            </div>
+        </div>
+
+        <!-- TODO: clean up!!! -->
+        <!-- Privacy policy flyout -->
+        <div class="settingsFlyout" data-win-control="WinJS.UI.SettingsFlyout" aria-label="Privacy Policy" data-win-options="{
+            settingsCommandId: 'privacyPolicySettingsFlyout'
+        }">
+            <div class="win-ui-dark win-header" style="background-color: #F58722">
+                <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+                <div class="win-label">Privacy Policy</div>
+            </div>
+            <div class="win-content">
+                <!-- Goal -->
+                <div class="win-settings-section">
+                    <p>This privacy policy explains our policy on the collection and use of your personal information. This policy is subject to change any time, so please read it periodically. By downloading and playing Rustic Citrus, you consent to this privacy policy.</p>
+                </div>
+
+                <!-- Collection of personal information -->
+                <div class="win-settings-section">
+                    <h3>Collection of personal information</h3>
+                    <p>Rustic Citrus uses the Facebook SDK to access your basic Facebook information as well as the basic information of your Facebook friends.</p>
+                </div>
+
+                <!-- Use of personal information -->
+                <div class="win-settings-section">
+                    <h3>Use of personal information</h3>
+                    <p>Your personal information is shared with players you choose to start multiplayer games with. They will only see your full name, Facebook profile picture, and game information. Your information will not be sold, traded, or given to any other company or third party for any reason whatsover, without your consent, other than for the direct purpose of creating and delivering the product.</p>
+                </div>
+
+                <!-- Last modified -->
+                <div class="win-settings-section">
+                    <p>This privacy policy was last modified on Novemer 26, 2013.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WinJS JS references -->
+        <script src="//Microsoft.WinJS.2.0/js/base.js" async></script>
+        <script src="//Microsoft.WinJS.2.0/js/ui.js" async></script>
+
+        <!-- JS plugin references -->
+        <script src="ms-appx:///common/js/plugins/navigator.js" async></script>
+        <script src="ms-appx:///common/js/plugins/jquery-2.0.3.min.js" async></script>
+        <script src="ms-appx:///common/js/plugins/transit-0.9.9.min.js" async></script>
+        <script src="ms-appx:///common/js/plugins/firebase.js" async></script>
+        <script src="ms-appx:///common/js/plugins/firebaseSimpleLogin.js" async></script>
+        
+        <!-- Custom JS references -->
+        <script src="default.js" async></script>
+        <script src="ms-appx:///pages/highScores/highScores.js" async></script>
+        <script src="ms-appx:///pages/achievements/achievements.js" async></script>
+        <script src="ms-appx:///common/js/bindingConverters.js" async></script>
+        <script src="ms-appx:///common/js/messageDialogs.js" async></script>
+    </body>
+</html>

@@ -1,0 +1,259 @@
+/*************/
+/*  IMPORTS  */
+/*************/
+/************/
+/*  COLORS  */
+/************/
+/*****************/
+/*  VIEW STATES  */
+/*****************/
+/* TODO */
+/****************************/
+/*  FULLSCREEN HERO SECTION */
+/****************************/
+#multiplayerGameSummary header[role=banner] {
+  position: relative;
+  z-index: 2;
+}
+
+#multiplayerGameSummary section[role=main] {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  z-index: 1;
+}
+
+.hero {
+  background-color: #f58722;
+  margin: 0 80px 0 -80px;
+  padding: 140px 0 0 0;
+  width: 500px;
+}
+.hero .win-hub-section-header {
+  display: none;
+}
+
+/*************************/
+/*  GAME SUMMARY SECTION */
+/*************************/
+#gameSummaryGrid {
+  display: -ms-grid;
+  -ms-grid-columns: 200px 1fr 200px;
+  -ms-grid-rows: 230px 1fr 1fr 1fr 1fr 150px;
+  text-align: center;
+  height: 80%;
+}
+#gameSummaryGrid #creatorInfo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+#gameSummaryGrid #opponentInfo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+#gameSummaryGrid .playerImage {
+  width: 130px;
+  height: 130px;
+  border: solid 3px #FFF;
+  border-radius: 65px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+#gameSummaryGrid .playerName {
+  font-size: 36px;
+  margin-top: 0px;
+}
+#gameSummaryGrid #versusOrange {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+  height: 75px;
+  font-size: 30px;
+}
+#gameSummaryGrid .roundScore {
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+  width: 130px;
+  height: 70px;
+  font-size: 40px;
+  line-height: 65px;
+  color: #000;
+  background-color: #FFF;
+}
+#gameSummaryGrid .roundScore.totalScore {
+  color: #FFF;
+  background-color: #871816;
+}
+#gameSummaryGrid .roundScore.whoseTurnScore {
+  font-size: 25px;
+}
+#gameSummaryGrid .roundScore#creatorRound1Score {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+#gameSummaryGrid .roundScore#creatorRound2Score {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+#gameSummaryGrid .roundScore#creatorRound3Score {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+}
+#gameSummaryGrid .roundScore#creatorTotalScore {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+#gameSummaryGrid .roundScore#opponentRound1Score {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+}
+#gameSummaryGrid .roundScore#opponentRound2Score {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+#gameSummaryGrid .roundScore#opponentRound3Score {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+}
+#gameSummaryGrid .roundScore#opponentTotalScore {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+}
+#gameSummaryGrid .roundDivider {
+  -ms-grid-column: 2;
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #871816;
+}
+#gameSummaryGrid .roundDivider#round1Divider {
+  -ms-grid-row: 2;
+}
+#gameSummaryGrid .roundDivider#round2Divider {
+  -ms-grid-row: 3;
+}
+#gameSummaryGrid .roundDivider#round3Divider {
+  -ms-grid-row: 4;
+}
+#gameSummaryGrid .roundDivider#totalScoreDivider {
+  -ms-grid-row: 5;
+}
+#gameSummaryGrid #multiplayerGamePlayButton {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+  width: 250px;
+  height: 75px;
+  font-size: 26px;
+}
+
+/**************************/
+/*  ROUND SUMMARY SECTION */
+/**************************/
+.roundSection {
+  margin-top: 140px;
+}
+.roundSection .roundSectionGrid {
+  display: -ms-grid;
+  -ms-grid-columns: 200px 100px 100px;
+  -ms-grid-rows: 100px 1fr 100px 100px;
+  text-align: center;
+  height: 80%;
+}
+.roundSection .roundSectionGrid .wordsFoundHeader {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #871816;
+}
+.roundSection .roundSectionGrid .creatorRoundSectionImage, .roundSection .roundSectionGrid .opponentRoundSectionImage {
+  -ms-grid-row: 1;
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+  width: 75px;
+  height: 75px;
+  border: solid 3px #FFF;
+  border-radius: 36px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+.roundSection .roundSectionGrid .creatorRoundSectionImage {
+  -ms-grid-column: 2;
+}
+.roundSection .roundSectionGrid .opponentRoundSectionImage {
+  -ms-grid-column: 3;
+}
+.roundSection .roundSectionGrid .scrollContainer {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  overflow: hidden;
+}
+.roundSection .roundSectionGrid .scrollContainer .roundWordsGrid {
+  display: flex;
+  text-align: center;
+  font-size: 26px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-right: 17px;
+}
+.roundSection .roundSectionGrid .scrollContainer .roundWordsGrid .roundWords {
+  width: 200px;
+}
+.roundSection .roundSectionGrid .scrollContainer .roundWordsGrid .creatorFoundWords {
+  width: 100px;
+}
+.roundSection .roundSectionGrid .scrollContainer .roundWordsGrid .opponentFoundWords {
+  width: 100px;
+}
+.roundSection .roundSectionGrid .totalWordsFoundHeader {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #871816;
+}
+.roundSection .roundSectionGrid .creatorTotalWordsFound, .roundSection .roundSectionGrid .opponentTotalWordsFound {
+  -ms-grid-row: 3;
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #871816;
+}
+.roundSection .roundSectionGrid .creatorTotalWordsFound {
+  -ms-grid-column: 2;
+}
+.roundSection .roundSectionGrid .opponentTotalWordsFound {
+  -ms-grid-column: 3;
+}
+.roundSection .roundSectionGrid .roundScoreHeader {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #871816;
+}
+.roundSection .roundSectionGrid .creatorRoundScore, .roundSection .roundSectionGrid .opponentRoundScore {
+  -ms-grid-row: 4;
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #871816;
+}
+.roundSection .roundSectionGrid .creatorRoundScore {
+  -ms-grid-column: 2;
+}
+.roundSection .roundSectionGrid .opponentRoundScore {
+  -ms-grid-column: 3;
+}

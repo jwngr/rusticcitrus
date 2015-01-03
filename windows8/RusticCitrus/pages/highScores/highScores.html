@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rustic Citrus | High Scores</title>
+
+        <!-- Metadata -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <!-- Custom CSS references -->
+        <link href="highScores.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- High scores -->
+        <div id="highScores" class="fragment">
+            <!-- Page header -->
+            <header aria-label="Header content" role="banner">
+                <button data-win-control="WinJS.UI.BackButton"></button>
+                <h1 class="titlearea win-type-ellipsis">
+                    <span class="pagetitle">High Scores</span>
+                </h1>
+            </header>
+
+            <!-- Main content -->
+            <section aria-label="Main content" role="main">
+                <!-- High scores group header template -->
+                <div id="highScoresHeaderTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                    <div class="simpleHeaderItem">
+                        <h2 data-win-bind="textContent: title"></h2>
+                    </div>
+                </div>
+
+                <!-- High scores list item template -->
+                <div id="highScoresListItemTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                    <div class="highScoresListItem" >
+                        <div class="noHighScoresMessage" data-win-bind="style.display: isPlaceholder RC.BindingConverters.showPlaceholderListItem">
+                            <p>No High Scores</p>
+                        </div>
+                        <div data-win-bind="style.display: isPlaceholder RC.BindingConverters.showNormalListItem">
+                            <p class="score" data-win-bind="textContent: score RC.BindingConverters.displayPrettyScore"></p>
+                            <p class="numRoundsCompleted" data-win-bind="textContent: numRoundsCompleted RC.BindingConverters.displayNumRoundsCompleted"></p>
+                            <p class="numWordsFound" data-win-bind="textContent: numWordsFound RC.BindingConverters.displayNumWordsFound"></p>
+                            <p class="numLettersContainer"></p>
+                            <p class="numLetters" data-win-bind="textContent: numLetters"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High scores list view -->
+                <div id="highScoresListView"
+                     data-win-control="WinJS.UI.ListView"
+                     data-win-options="{
+                        groupHeaderTemplate: select('#highScoresHeaderTemplate'),
+                        itemTemplate: select('#highScoresListItemTemplate'),
+                        tapBehavior: 'none',
+                        swipeBehavior: 'none',
+                        layout: {type: WinJS.UI.GridLayout}
+                    }">
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,224 @@
+/*************/
+/*  IMPORTS  */
+/*************/
+/************/
+/*  COLORS  */
+/************/
+/*****************/
+/*  VIEW STATES  */
+/*****************/
+/****************/
+/*  GAME BOARD  */
+/****************/
+.gameBoard {
+  background-image: url("/resources/images/backgrounds/paintBackground.jpg");
+  background-size: cover;
+}
+
+#gameBoard {
+  display: none;
+}
+
+/* Game information */
+#roundContainer, #scoreContainer, #timeRemainingContainer {
+  position: absolute;
+  width: 180px;
+  top: 0px;
+  font-family: "Pacifico";
+  font-size: 50px;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 5px;
+  line-height: 0.4em;
+}
+
+#roundContainer {
+  right: 700px;
+}
+
+#scoreContainer {
+  right: 435px;
+}
+
+#timeRemainingContainer {
+  right: 200px;
+}
+
+#scoreIncreaseContainer {
+  position: absolute;
+  font-family: "Pacifico";
+  font-size: 46px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+/* Miscellaneous game board items */
+.roundLetter {
+  opacity: 0;
+}
+
+#guessedLettersPlank {
+  position: absolute;
+  width: 850px;
+  height: 100px;
+  right: 34px;
+  bottom: 400px;
+}
+
+/* Game board buttons */
+#pauseGameButton {
+  position: absolute;
+  top: 70px;
+  right: 70px;
+  height: 80px;
+  width: 80px;
+}
+
+#endRoundButton {
+  position: absolute;
+  right: 695px;
+  bottom: 80px;
+}
+
+#lastButton {
+  position: absolute;
+  right: 515px;
+  bottom: 80px;
+}
+
+#submitButton {
+  position: absolute;
+  right: 235px;
+  bottom: 50px;
+}
+
+#shuffleButton {
+  position: absolute;
+  right: 65px;
+  bottom: 80px;
+}
+
+/************************/
+/*  GAME OVERLAY MENUS  */
+/************************/
+.gameOverlayMenu {
+  position: absolute;
+  border: solid 2px black;
+  background-color: #F58722;
+  z-index: 1;
+  text-align: center;
+  display: none;
+}
+
+#pauseMenu {
+  width: 800px;
+  height: 500px;
+  left: calc(50% - 400px);
+  top: calc(50% - 250px);
+}
+
+#endRoundMenu, #gameOverMenu, #nextRoundMenu {
+  width: 800px;
+  height: 500px;
+  left: calc(100% - 855px);
+  top: calc(50% + 80px - 250px);
+}
+
+.gameOverlayMenu .gameOverlayMenuTitle {
+  display: inline-block;
+  font-family: "Pacifico";
+  font-size: 70px;
+  color: #FFFFFF;
+  margin: 90px 0 90px 0;
+}
+
+.gameOverlayMenuButtons > input[type="button"] {
+  margin-right: 45px;
+  width: 200px;
+  height: 125px;
+  font-size: 20px;
+}
+
+.gameOverlayMenuButtons > input[type="button"]:last-child {
+  margin-right: 0px;
+}
+
+#gameOverMenuHighScore .gameOverlayMenuTitle {
+  margin: 75px 0px 15px 0px;
+}
+
+#gameOverMenuHighScore .gameOverlayMenuSubtext {
+  font-size: 24px;
+  margin-bottom: 55px;
+}
+
+/********************/
+/*  RAPHAEL PAPERS  */
+/********************/
+#subsetWordsPaper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: calc(100% - 900px);
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+#subsetWordsMask {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  top: 0;
+  right: 900px;
+  box-shadow: inset -50px 0px 50px 0px #d7ad71, 20px 0px 20px 0px #d7ad71;
+}
+
+#availableLettersPaper {
+  position: absolute;
+  top: 0px;
+  left: calc(100% - 900px);
+  width: 900px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sprite {
+  background-image: url("/resources/images/buttons/gameBoard/gameBoard.png");
+  background-repeat: no-repeat;
+}
+.sprite#guessedLettersPlank {
+  background-position: 0 -70px;
+  width: 850px;
+  height: 100px;
+}
+.sprite#lastButton {
+  background-position: -150px 0;
+  width: 150px;
+  height: 70px;
+}
+.sprite#pauseGameButton {
+  background-position: 0 -170px;
+  width: 80px;
+  height: 80px;
+}
+.sprite#shuffleButton {
+  background-position: -450px 0;
+  width: 150px;
+  height: 70px;
+}
+.sprite#submitButton {
+  background-position: -80px -170px;
+  width: 250px;
+  height: 125px;
+}
+.sprite.endGameButton {
+  background-position: 0 0;
+  width: 150px;
+  height: 70px;
+}
+.sprite.nextRoundButton {
+  background-position: -300px 0;
+  width: 150px;
+  height: 70px;
+}

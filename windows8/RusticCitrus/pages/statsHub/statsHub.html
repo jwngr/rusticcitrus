@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rustic Citrus | Statistics</title>
+
+        <!-- Metadata -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <!-- Custom CSS references -->
+        <link href="statsHub.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="statsHub fragment">
+            <!-- Page header -->
+            <header aria-label="Header content" role="banner">
+                <button data-win-control="WinJS.UI.BackButton"></button>
+                <h1 class="titlearea win-type-ellipsis">
+                    <span class="pagetitle">Statistics</span>
+                </h1>
+            </header>
+
+            <!-- Main content -->
+            <section aria-label="Main content" role="main">
+                <div class="hub" data-win-control="WinJS.UI.Hub">
+                    <!-- High scores section -->
+                    <div id="highScoresSection" data-win-control="WinJS.UI.HubSection" data-win-options="{ isHeaderStatic: false, header: 'High Scores' }">
+                        <!-- High scores list item template -->
+                        <div id="highScoresListItemTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                            <div class="highScoresListItem">
+                                <!-- TODO: deal with no high scores in this section -->
+                                <div class="noHighScoresListItem" data-win-bind="style.display: isPlaceholder RC.BindingConverters.showPlaceholderListItem">
+                                    <p>No High Scores</p>
+                                </div>
+                                <div data-win-bind="style.display: isPlaceholder RC.BindingConverters.showNormalListItem">
+                                    <p class="score" data-win-bind="textContent: score RC.BindingConverters.displayPrettyScore"></p>
+                                    <p class="numRoundsCompleted" data-win-bind="textContent: numRoundsCompleted RC.BindingConverters.displayNumRoundsCompleted"></p>
+                                    <p class="numWordsFound" data-win-bind="textContent: numWordsFound RC.BindingConverters.displayNumWordsFound"></p>
+                                    <p class="numLettersContainer"></p>
+                                    <p class="numLetters" data-win-bind="textContent: numLetters"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- High scores  list view -->
+                        <div id="highScoresListView"
+                             data-win-control="WinJS.UI.ListView"
+                             data-win-options="{
+                                    itemDataSource: RC.Stats.highScoresDataSource,
+                                    itemTemplate: select('#highScoresListItemTemplate'),
+                                    tapBehavior: 'none',
+                                    swipeBehavior: 'none',
+                                    layout: {type: WinJS.UI.GridLayout}
+                            }"></div>
+                    </div>
+
+                    <!-- Achievements section -->
+                    <div id="achievementsSection" data-win-control="WinJS.UI.HubSection" data-win-options="{ isHeaderStatic: false, header: 'Achievements' }">
+                        <div id="achievementsGrid">
+                            <div id="allAchievementsGrid" class="achievementsGridItem">
+                                <p class="name">All Achievements</p>
+                                <p class="ratio"></p>
+                                <p class="percentage"></p>
+                            </div>
+
+                            <div id="fiveLetterAchievementsGrid" class="achievementsGridItem">
+                                <p class="name">5-Letter</p>
+                                <p class="ratio"></p>
+                                <p class="percentage"></p>
+                            </div>
+
+                            <div id="sixLetterAchievementsGrid" class="achievementsGridItem">
+                                <p class="name">6-Letter</p>
+                                <p class="ratio"></p>
+                                <p class="percentage"></p>
+                            </div>
+
+                            <div id="sevenLetterAchievementsGrid" class="achievementsGridItem">
+                                <p class="name">7-Letter</p>
+                                <p class="ratio"></p>
+                                <p class="percentage"></p>
+                            </div>
+
+                            <div id="miscellaneousAchievementsGrid" class="achievementsGridItem">
+                                <p class="name">Miscellaneous</p>
+                                <p class="ratio"></p>
+                                <p class="percentage"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Custom JS references -->
+        <script src="statsHub.js" async></script>
+    </body>
+</html>

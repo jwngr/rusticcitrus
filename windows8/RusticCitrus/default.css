@@ -1,0 +1,175 @@
+﻿/*************/
+/*  IMPORTS  */
+/*************/
+/************/
+/*  COLORS  */
+/************/
+/*************/
+/*  IMPORTS  */
+/*************/
+/************/
+/*  COLORS  */
+/************/
+/*********************/
+/*  LOGIN CONTAINER  */
+/*********************/
+#loginContainer {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 320px;
+  height: 85px;
+  padding: 5px;
+  overflow: hidden;
+  z-index: 100; }
+  #loginContainer img {
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+    float: right;
+    border: solid 3px white;
+    border-radius: 38px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8); }
+  #loginContainer div {
+    margin: 12px 5px 5px 5px;
+    color: #871816;
+    float: right;
+    text-align: right;
+    width: 215px; }
+    #loginContainer div .name {
+      font-size: 26px;
+      margin: 0px;
+      padding: 0px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: bold; }
+    #loginContainer div .username {
+      font-size: 20px;
+      margin: 0px;
+      padding: 0px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: bold; }
+
+/*******************/
+/*  MEDIA QUERIES  */
+/*******************/
+/**************************/
+/*  WinJS APP NAVIGATION  */
+/**************************/
+#contenthost {
+  width: 100%;
+  height: 100%; }
+
+.titlearea {
+  text-align: left; }
+
+.fragment {
+  /* Define a grid with rows for a banner and a body */
+  -ms-grid-columns: 1fr;
+  -ms-grid-rows: 128px 1fr;
+  display: -ms-grid;
+  height: 100%;
+  width: 100%; }
+
+.fragment header[role=banner] {
+  /* Define a grid with columns for the back button and page title. */
+  -ms-grid-columns: 120px 1fr;
+  -ms-grid-rows: 1fr;
+  display: -ms-grid; }
+
+.fragment header[role=banner] .win-backbutton {
+  margin-left: 39px;
+  margin-top: 59px; }
+
+.fragment header[role=banner] .titlearea {
+  -ms-grid-column: 2;
+  margin-top: 37px; }
+
+.fragment header[role=banner] .titlearea .pagetitle {
+  width: calc(100% - 20px); }
+
+.fragment section[role=main] {
+  -ms-grid-row: 2;
+  height: 100%;
+  width: 100%; }
+
+/*****************/
+/*  VIEW STATES  */
+/*****************/
+/****************/
+/*  BACKGROUND  */
+/****************/
+body {
+  background-image: url("/resources/images/backgrounds/woodBackground.jpg");
+  background-size: cover; }
+
+/******************/
+/*  CUSTOM FONTS  */
+/******************/
+@font-face {
+  font-family: "Pacifico";
+  src: url("/resources/fonts/pacifico.subset.woff"); }
+
+@font-face {
+  font-family: "HalloSans";
+  src: url("/resources/fonts/halloSans.woff"); }
+
+@font-face {
+  font-family: "AmaticBold";
+  src: url("/resources/fonts/amatic-bold-webfont.woff"); }
+
+/***********************************/
+/*  UNPLAYABLE VIEW STATE WARNING  */
+/***********************************/
+#unplayableViewStateWarning > img {
+  position: absolute; }
+
+#unplayableViewStateWarning > p {
+  position: absolute;
+  color: #871816;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px white;
+  text-align: center; }
+
+/**********************/
+/*  SETTINGS FLYOUTS  */
+/**********************/
+.settingsFlyout {
+  width: 345px; }
+
+.win-settings-section > h3 {
+  margin-bottom: 20px; }
+
+#confirmResetDataFlyout {
+  width: 220px;
+  max-width: 220px; }
+
+#confirmResetDataFlyout p {
+  margin: -10px auto 20px auto; }
+
+#confirmResetDataButton {
+  margin-right: 30px; }
+
+/***************/
+/*  LIST VIEW  */
+/***************/
+.simpleHeaderItem h2 {
+  font-size: 32px; }
+
+/****************************/
+/*  NAVIGATION BACK BUTTON  */
+/****************************/
+.win-navigation-backbutton {
+  margin: 57px 0 0 37px; }
+
+/* TODO: decide if I want to use this font */
+.pagetitle {
+  font-family: "AmaticBold";
+  font-size: 60px;
+  letter-spacing: 5px;
+  line-height: 35px;
+}

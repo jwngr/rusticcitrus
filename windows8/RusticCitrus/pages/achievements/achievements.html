@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rustic Citrus | Achievements</title>
+
+        <!-- Metadata -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <!-- Custom CSS references -->
+        <link href="achievements.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- Achievements -->
+        <div id="achievements" class="fragment">
+            <!-- Page header -->
+            <header aria-label="Header content" role="banner">
+                <button data-win-control="WinJS.UI.BackButton"></button>
+                <h1 class="titlearea win-type-ellipsis">
+                    <span class="pagetitle">Achievements</span>
+                </h1>
+            </header>
+
+            <!-- Main content -->
+            <section aria-label="Achievements" role="main">
+                <!-- Achievements group header template -->
+                <div id="achievementsHeaderTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                    <div class="simpleHeaderItem">
+                        <h2 data-win-bind="textContent: title"></h2>
+                    </div>
+                </div>
+
+                <!-- Achievements list item template -->
+                <div id="achievementsListItemTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                    <div class="achievementsListItem">
+                        <p class="name" data-win-bind="textContent: name"></p>
+                        <p class="description" data-win-bind="textContent: description"></p>
+                        <p class="lockIconContainer" data-win-bind="style.display: isComplete RC.BindingConverters.displayLockIcon"></p>
+                        <img class="lockIcon" src="/resources/images/miscellaneous/lockIcon.png" data-win-bind="style.display: isComplete RC.BindingConverters.displayLockIcon" />
+                    </div>
+                </div>
+
+                <!-- Achievements list view -->
+                <div id="achievementsListView"
+                     data-win-control="WinJS.UI.ListView"
+                     data-win-options="{
+                        groupHeaderTemplate: select('#achievementsHeaderTemplate'),
+                        itemTemplate: select('#achievementsListItemTemplate'),
+                        tapBehavior: 'none',
+                        swipeBehavior: 'none',
+                        layout: {type: WinJS.UI.GridLayout}
+                    }">
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

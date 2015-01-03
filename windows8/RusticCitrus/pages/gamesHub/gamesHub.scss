@@ -1,0 +1,219 @@
+﻿/*************/
+/*  IMPORTS  */
+/*************/
+@import "../../common/css/colors";
+
+/**************/
+/*  HUB PAGE  */
+/**************/
+.hubpage {
+	header[role=banner] {
+		position: relative;
+		z-index: 2;
+	}
+
+	section[role=main] {
+		-ms-grid-row: 1;
+		-ms-grid-row-span: 2;
+		z-index: 1;
+	}
+
+	.hub .win-hub-surface {
+		height: 100%;
+	}
+}
+
+.win-hub-horizontal .win-hub-section-header {
+    margin: 0px;
+	margin-left: 5px;
+
+    h2 {
+        font-size: 32px;
+		font-weight: medium;
+		color: $red;
+    }
+
+	.win-hub-section-header-chevron {
+		margin-top: 5px;
+	}
+}
+
+/*************************/
+/*  NEW GAME SEARCH BOX  */
+/*************************/
+#newGameSearchBox {
+	position: absolute;
+	top: 100px;
+	right: 350px;
+	width: 350px;
+
+	.win-searchbox-button-input-focus {
+		background-color: $red;
+	}
+
+	.win-searchbox-suggestion-selected {
+		background-color: $red;
+	}
+
+	.win-searchbox-flyout-highlighttext {
+		color: #000;
+		font-weight: bold;
+	}
+
+	.win-searchbox-suggestion-result-text {
+		width: 250px;
+	}
+}
+
+/*****************/
+/*  GAMES LISTS  */
+/*****************/
+#singlePlayerGamesListView
+{
+    height: 100%;
+
+    .newGameListItem {
+        font-size: 44px;
+        margin-top: -10px;
+    }
+
+    .gamesListItem
+    {
+        width: 200px;
+        height: 200px;
+        padding: 5px;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 1fr;
+        background-color: $orange;
+
+        div
+        {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+            -ms-grid-column-span: 1;
+            -ms-grid-row-span: 1;
+            text-align: center;
+        }
+
+        .score {
+            font-size: 44px;
+            margin-top: 25px;
+        }
+
+        .numRoundsCompleted {
+            font-size: 18px;
+            line-height: 10px;
+            margin-top: -30px;
+        }
+    
+        .timeRemaining {
+            font-size: 18px;
+        }
+    }
+
+	.numLetters {
+        position: absolute;
+        top: -28px;
+        left: 12px;
+        font-size: 26px;
+    }
+
+    .numLettersContainer {
+        position: absolute;
+        top: -15px;
+        left: 0;
+        border-color: $red transparent transparent $red;
+        border-style: solid;
+        border-width: 30px;
+    }
+
+    /* Selected items */
+    .win-selectioncheckmarkbackground {
+        border-right-color: $red;
+        border-top-color: $red;
+    }
+
+    .win-selectionborder {
+        border-color: $red;
+    }
+}
+
+#yourTurnMultiplayerGamesListView, #theirTurnMultiplayerGamesListView {
+    height: 100%;
+
+    .multiplayerGamesListItem {
+        width: 350px;
+        height: 100px;
+        padding: 5px;
+        overflow: hidden;
+        display: -ms-grid;
+        background-color: $orange;
+
+		.newGameListItem > p {
+			margin-top: 16px;
+			font-size: 44px;
+			text-align: center;
+			width: 350px;
+		}
+
+		div
+        {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+            -ms-grid-column-span: 1;
+            -ms-grid-row-span: 1;
+			display: -ms-grid;
+
+			img {
+				width: 90px;
+				height: 90px;
+				margin: 5px;
+				-ms-grid-column: 1;
+			}
+
+			div {
+				margin: 5px;
+				-ms-grid-column: 2;
+
+				.opponentName {
+					font-size: 22px;
+					margin: 0;
+					padding: 0;
+				}
+
+				.scoreText {
+					font-size: 14px;
+					margin: 30px 0 0 0;
+					padding: 0;
+				}
+			}
+		}
+    }
+
+    /* Selected items */
+    .win-selectioncheckmarkbackground {
+        border-right-color: $red;
+        border-top-color: $red;
+    }
+
+    .win-selectionborder {
+        border-color: $red;
+    }
+}
+
+/*************/
+/*  APP BAR  */
+/*************/
+.appBarFlyout {
+    width: 220px;
+    max-width: 220px;
+
+	p {
+		margin: -10px auto 20px auto;
+	}
+
+	#confirmDeleteSelectedGamesButton, #confirmForfeitSelectedGamesButton {
+		margin-right: 30px;
+	}
+}

@@ -1,0 +1,33 @@
+﻿/*************/
+/*  IMPORTS  */
+/*************/
+@import "../../common/css/colors";
+@import "../../common/css/highScoresListItem";
+
+/*****************/
+/*  VIEW STATES  */
+/*****************/
+// TODO: make this responsive
+
+
+/**********************/
+/*  HIGH SCORES LIST  */
+/**********************/
+#highScores #highScoresListView
+{
+    height: 100%;
+    width: 100%;
+	
+	.win-surface {
+		margin-left: 50px;
+		margin-right: 70px;
+
+		.win-itemscontainer {
+			width: auto !important;
+
+			.win-itemsblock {
+				height: 75%;
+			}
+		}
+	}
+}
