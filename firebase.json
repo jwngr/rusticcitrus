@@ -1,0 +1,13 @@
+{
+  "firebase": "rustic-citrus",
+  "public": "./web/",
+  "ignore": [
+    "firebase.json",
+    "sass",
+    "config",
+    "app/sass",
+    "app/config",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
