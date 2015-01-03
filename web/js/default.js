@@ -177,4 +177,7 @@ $(function() {
       $("#invalidEmailWarning").fadeIn(400);
     }
   };
+
+  // Set copyright year dynamically
+  $("#copyrightYear").text(new Date().getFullYear());
 });
