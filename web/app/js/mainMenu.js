@@ -20,16 +20,16 @@
         if (!$.RC) {
             $.RC = {};
         }
-        
+
         $("#dimensions").text($(window).width() + " x " + $(window).height());
         $(window).resize(function() {
             $("#dimensions").text($(window).width() + " x " + $(window).height());
         });
-        
+
         // Don't load game board music until now
         var gameBoardMenuMusic = new Audio("./resources/sounds/music/gameBoardMusic.mp3");
         gameBoardMenuMusic.loop = true;
-        
+
         // Add some global music-related variables to the RC namespace
         $.RC.Music = {
             mainMenuMusic: $("#mainMenuMusic")[0],
@@ -37,7 +37,7 @@
             musicOn: false,
             soundEffectsOn: true
         };
-        
+
         // Change the volume of the music
         try {
             $.RC.Music.mainMenuMusic.volume = 0.2;
@@ -45,15 +45,15 @@
         }
         catch(error) {
         }
-        
-        
+
+
         // Initialize the main menu event listeners
         initializeMainMenuEventListeners();
 
         // Show the main menu
         showMainMenu();
     });
-    
+
 
     /**********************/
     /*  HELPER FUNCTIONS  */
@@ -73,6 +73,11 @@
             $("#helpOverlay").hide();
         });
 
+        // Windows Store button
+        $("#mainMenuWindowsStoreButton").on("click", function () {
+            window.open("http://apps.microsoft.com/windows/app/rustic-citrus/c7f73eae-9de1-48ef-a99d-6a61105d8349");
+        });
+
         // Help button
         $("#mainMenuHelpButton").on("click", function () {
             $("#helpOverlay").fadeIn(400);
@@ -80,7 +85,7 @@
         $("#closeHelpOverlayButton").on("click", function() {
             $("#helpOverlay").fadeOut(400);
         });
-        
+
         // Music button
         $("#mainMenuMusicButton").on("click", function () {
             $.RC.Music.musicOn = !$.RC.Music.musicOn;
@@ -102,11 +107,11 @@
             catch(error) {
             }
         });
-        
+
         // Sound effects button
         $("#mainMenuSoundEffectsButton").on("click", function () {
             $.RC.Music.soundEffectsOn = !$.RC.Music.soundEffectsOn;
-            
+
             if ($.RC.Music.soundEffectsOn) {
                 $(this).attr("src", "./resources/images/buttons/mainMenu/mainMenuSoundEffectsOnButton.png");
             }
@@ -114,7 +119,7 @@
                 $(this).attr("src", "./resources/images/buttons/mainMenu/mainMenuSoundEffectsOffButton.png");
             }
         });
-        
+
         // Start game buttons
         $("#startFiveLetterGameButton").on("click", function() {
             $("#startGameMenu").fadeOut(400, function() {
@@ -123,7 +128,7 @@
                 });
             });
         });
-        
+
         $("#startSixLetterGameButton").on("click", function() {
             $("#startGameMenu").fadeOut(400, function() {
                 $("#gameBoard").fadeIn(function() {
@@ -131,7 +136,7 @@
                 });
             });
         });
-        
+
         $("#startSevenLetterGameButton").on("click", function() {
             window.open("http://apps.microsoft.com/windows/app/rustic-citrus/c7f73eae-9de1-48ef-a99d-6a61105d8349");
         });
@@ -194,7 +199,7 @@
             delay: 900,
             duration: 1300
         });
-        
+
         // Animate the Floating House Studios logo
         $("#floatingHouseStudiosLogo").transition({
             y: 50,
@@ -205,7 +210,7 @@
             delay: 900,
             duration: 1300
         });
-        
+
         // Animate the music button
         $("#mainMenuMusicButton").transition({
             y: 50,
@@ -238,7 +243,7 @@
             delay: 1100,
             duration: 1300
         });
-        
+
         // Change the scale of the orange buttons on mouse events (once the two large main menu buttons are in their correct spot)
         var g_ORANGE_BUTTON_SCALE_TIMEOUT = window.setTimeout(function () {
             $(".mainMenuOrangeButton").on("mouseover", function () {
@@ -300,17 +305,17 @@
             }, 500);
         }, 1550);
     };
-    
-    
-    
-    
+
+
+
+
     /********************************/
     /*  PAGE-WIDE GLOBAL VARIABLES  */
     /********************************/
     // Raphael SVG paper
     var g_PAPERS;
 
-    
+
     /*****************************/
     /*  GAME BOARD PAGE CONTROL  */
     /*****************************/
@@ -356,7 +361,7 @@
         $(".gameOverlayMenu .downloadGameButton").on("click", function () {
             window.open("http://apps.microsoft.com/windows/app/rustic-citrus/c7f73eae-9de1-48ef-a99d-6a61105d8349");
         });
-        
+
         // Pause menu
         $("#pauseMenu #resumeGameButton").on("click", function () {
             $.RC.currentGame.currentRound.resume();
@@ -451,7 +456,7 @@
     function startNewGame(numLetters) {
         // Create a new game
         $.RC.currentGame = new $.RC.Classes.Game(g_PAPERS, numLetters);
-        
+
         // Create a new round
         if (numLetters == 5) {
             $.RC.currentGame.createRound(120);
@@ -507,7 +512,7 @@
                     }
                 }
             });
-            
+
             // Fade in the main menu
             $("#mainMenu").fadeIn(400);
         });

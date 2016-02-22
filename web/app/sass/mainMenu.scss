@@ -53,12 +53,13 @@ body {
 #mainMenuButtonsContainer {
     @extend %centeredHorizontally;
     bottom: 0px;
-    
+    margin-left: 160px;
+
     img {
         @extend %orangeButton;
         width: $mainMenuOrangeWidth;
         height: $mainMenuOrangeHeight;
-        
+
         &:not(:last-child) {
             margin-right: 50px;
         }
@@ -69,7 +70,7 @@ body {
     position: absolute;
     right: 50px;
     bottom: 50px;
-    
+
     img {
         @extend %orangeButton;
         width: $submenuOrangeWidth;
@@ -111,7 +112,7 @@ body {
     font-size: 20px;
     font-weight:600;
     border: solid 2px #FFF;
-    background-color: transparent;    
+    background-color: transparent;
     color: #FFF;
     width: 200px;
     height: 75px;
@@ -132,11 +133,11 @@ body {
         margin-top: 0;
         margin-bottom: 0;
     }
-    
+
     #submenuButtonsContainer {
         top: $centerContainerHeight - $submenuOrangeHeight - 50;
     }
-    
+
     #floatingHouseStudiosLogo {
         top: $centerContainerHeight - $floatingHouseStudiosLogoHeight - 50;
     }
@@ -148,14 +149,14 @@ body {
         bottom: 25px;
         img {
             display: block;
-            
+
             &:not(:last-child) {
                 margin-right: 0;
                 margin-bottom: 20px;
             }
         }
     }
-    
+
     #floatingHouseStudiosLogo {
         width: 150px;
         height: 100px;
@@ -168,7 +169,7 @@ body {
     #rusticCitrusLogo {
         width: 450px;
     }
-    
+
     $centerContainerWidth: 708px;
     $centerContainerHeight: 600px;
     #centerContainer {
@@ -176,18 +177,18 @@ body {
         height: $centerContainerHeight;
         padding-bottom: 150px;
     }
-    
+
     $mainMenuOrangeWidth: 200px;
     $mainMenuOrangeHeight: 200px;
     #mainMenuButtonsContainer {
         bottom: 200px;
-        
+
         img {
             width: $mainMenuOrangeWidth;
             height: $mainMenuOrangeHeight;
         }
     }
-    
+
     #floatingHouseStudiosLogo {
         width: 150px;
         height: 100px;
@@ -200,25 +201,25 @@ body {
     #rusticCitrusLogo {
         width: 400px;
     }
-    
+
     $centerContainerWidth: 600px;
     $centerContainerHeight: 700px;
     #centerContainer {
         width: $centerContainerWidth;
         height: $centerContainerHeight;
     }
-    
+
     $mainMenuOrangeWidth: 162px;
     $mainMenuOrangeHeight: 162px;
     #mainMenuButtonsContainer {
         bottom: 200px;
-        
+
         img {
             width: $mainMenuOrangeWidth;
             height: $mainMenuOrangeHeight;
         }
     }
-    
+
     #floatingHouseStudiosLogo {
         width: 150px;
         height: 100px;
@@ -235,31 +236,31 @@ body {
     #rusticCitrusLogo {
         width: 270px;
     }
-    
+
     $centerContainerWidth: 300px;
     $centerContainerHeight: 95%;
     #centerContainer {
         width: $centerContainerWidth;
         height: $centerContainerHeight;
     }
-    
+
     $mainMenuOrangeWidth: 130px;
     $mainMenuOrangeHeight: 130px;
     #mainMenuButtonsContainer {
         top: 200px;
         left: 50%;
         margin-left: -65px;
-        
+
         img {
             width: $mainMenuOrangeWidth;
             height: $mainMenuOrangeHeight;
-            
+
             &:not(:last-child) {
                 margin-bottom: 20px;
             }
         }
     }
-    
+
     #submenuButtonsContainer {
         display: block;
         width: 300px;
@@ -267,7 +268,7 @@ body {
         margin-left: -150px;
         bottom: 25px;
     }
-    
+
     #floatingHouseStudiosLogo {
         display: none;
     }
@@ -285,12 +286,12 @@ body {
     #rusticCitrusLogo {
         width: 500px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         width: 225px;
         height: 225px;
     }
-    
+
     #mainMenuPlayButton {
         right: 110px;
     }
@@ -304,12 +305,12 @@ body {
     #rusticCitrusLogo {
         width: 420px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         width: 190px;
         height: 190px;
     }
-        
+
     #mainMenuPlayButton {
         right: 90px;
     }
@@ -324,13 +325,13 @@ body {
         top: 30px;
         width: 350px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         bottom: 30px;
         width: 140px;
         height: 140px;
     }
-        
+
     #mainMenuPlayButton {
         right: 70px;
     }
@@ -345,12 +346,12 @@ body {
     #rusticCitrusLogo {
         width: 500px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         width: 225px;
         height: 225px;
     }
-    
+
     #mainMenuPlayButton {
         right: 70px;
     }
@@ -364,12 +365,12 @@ body {
     #rusticCitrusLogo {
         width: 450px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         width: 200px;
         height: 200px;
     }
-    
+
     #mainMenuPlayButton {
         right: 70px;
     }
@@ -384,13 +385,13 @@ body {
         top: 25px;
         width: 400px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         bottom: 220px;
         width: 190px;
         height: 190px;
     }
-    
+
     #mainMenuPlayButton {
         right: 70px;
     }

@@ -4,7 +4,7 @@
         <title>Rustic Citrus | Play</title>
 
         <!-- Metadata -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content="Rustic Citrus, word game, word, game, puzzle, twist, letters" />
@@ -15,15 +15,15 @@
         <!-- Favicon -->
         <link rel="icon" href="../resources/images/favicon.png">
         <!--[if IE]><link rel="shortcut icon" href="../resources/images/favicon.ico"><![endif]-->
-        
+
         <!-- Link to Windows Store from IE modern browser -->
         <meta name="msApplication-ID" content="22571FloatingHouseStudios.RusticCitrus"/>
         <meta name="msApplication-PackageFamilyName" content="22571FloatingHouseStudios.RusticCitrus_d5bvdbrxjfkqg"/>
-        
+
         <!-- Start screen tile -->
         <meta name="msapplication-TileColor" content="#F58722"/>
         <meta name="msapplication-TileImage" content="../resources/images/tileLogo.png"/>
-        
+
         <!-- Custom CSS references -->
         <link type="text/css" rel="stylesheet" href="./css/default.css" />
         <link type="text/css" rel="stylesheet" href="./css/mainMenu.css" />
@@ -31,21 +31,21 @@
     </head>
 
     <body>
-        <span id="dimensions" style="position: absolute; top: 75px; right: 25px; font-size: 20px;"></span>
+        <!-- TODO: delete this span -->
+        <!-- <span id="dimensions" style="position: absolute; top: 75px; right: 25px; font-size: 20px;"></span> -->
         <!-- Main menu -->
         <div id="mainMenu">
             <div id="centerContainer">
                 <!-- Rustic Citrus logo -->
                 <img id="rusticCitrusLogo" src="./resources/images/logos/rusticCitrusMainColorLogo.png" />
-                
+
                 <!-- Main menu buttons -->
                 <div id="mainMenuButtonsContainer">
                     <img id="mainMenuPlayButton" class="mainMenuOrangeButton" src="./resources/images/buttons/mainMenu/mainMenuPlayButton.png" />
                     <img id="mainMenuWindowsStoreButton" class="mainMenuOrangeButton" src="./resources/images/buttons/mainMenu/mainMenuWindowsStoreButton.png" />
-                    <img id="mainMenuAchievementsButton" class="mainMenuOrangeButton" src="./resources/images/buttons/mainMenu/mainMenuPlayButton.png" />
                 </div>
             </div>
-            
+
             <!-- Submenu buttons -->
             <div id="submenuButtonsContainer">
                 <img id="mainMenuMusicButton" class="mainMenuOrangeButton" src="./resources/images/buttons/mainMenu/mainMenuMusicOnButton.png" />
@@ -55,7 +55,7 @@
 
             <!-- Floating House Studios logo -->
             <img id="floatingHouseStudiosLogo" src="./resources/images/logos/floatingHouseStudiosLogo.png" />
-            
+
             <!-- Help -->
             <div id="helpOverlay">
                 <!-- Goal -->
@@ -88,14 +88,14 @@
                         <li>Pause game - Escape</li>
                     </ul>
                 </div>
-                
+
                 <!-- Close help button -->
                 <input id="closeHelpOverlayButton" type="button" value="Close Help" />
             </div>
         </div>
-        
+
         <!-- Game board -->
-        <div id="gameBoard">            
+        <div id="gameBoard">
             <!-- Game information -->
             <div id="gameInformation">
                 <!-- Round -->
@@ -119,11 +119,11 @@
 
             <!-- Guessed letters plank -->
             <img id="guessedLettersPlank" src="./resources/images/miscellaneous/guessedLettersPlank.png" />
-            
+
             <!-- Raphael SVG papers -->
             <div id="subsetWordsPaper"></div>
             <div id="availableLettersPaper"></div>
-            
+
             <!-- Game board buttons -->
             <img id="pauseGameButton" class="gameBoardButton" src="./resources/images/buttons/gameBoard/pauseButton.png" />
             <img id="clearButton" class="gameBoardButton" src="./resources/images/buttons/gameBoard/clearButton.png" />
@@ -141,7 +141,7 @@
                 <input id="startSevenLetterGameButton" type="button" value="7 (download only)" />
             </div>
         </div>
-        
+
         <!-- Pause menu -->
         <div id="pauseMenu" class="gameOverlayMenu">
             <p class="gameOverlayMenuTitle">Game Paused</p>
@@ -171,21 +171,21 @@
 
         <!-- Music -->
         <audio id="mainMenuMusic" src="./resources/sounds/music/mainMenuMusic.mp3" loop preload="none"></audio>
-        
+
         <!-- Hack to preload font -->
         <div style="font-family:'Pacifico'">&nbsp;</div>
-        
+
         <!-- JS plugin references -->
-        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js" ></script>
-        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.9/jquery.transit.min.js" ></script>
-        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.0.1/raphael-min.js" async></script>
-        
+        <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js" ></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.9/jquery.transit.min.js" ></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.0.1/raphael-min.js" async></script>
+
         <!-- Custom JS references -->
         <script type="text/javascript" src="./js/mainMenu.js" async></script>
         <script type="text/javascript" src="./js/wordList.js" async></script>
         <script type="text/javascript" src="./js/game.js" async></script>
         <script type="text/javascript" src="./js/round.js" async></script>
-        
+
         <!-- Analytics -->
         <!-- <script type="text/javascript" src="../js/analytics.js" async></script> -->
     </body>

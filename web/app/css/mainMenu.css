@@ -46,6 +46,7 @@ body {
 /* line 53, ../sass/mainMenu.scss */
 #mainMenuButtonsContainer {
   bottom: 0px;
+  margin-left: 160px;
 }
 /* line 57, ../sass/mainMenu.scss */
 #mainMenuButtonsContainer img {
@@ -276,12 +277,12 @@ body {
     #rusticCitrusLogo {
         width: 500px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         width: 225px;
         height: 225px;
     }
-    
+
     #mainMenuPlayButton {
         right: 110px;
     }
@@ -295,12 +296,12 @@ body {
     #rusticCitrusLogo {
         width: 420px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         width: 190px;
         height: 190px;
     }
-        
+
     #mainMenuPlayButton {
         right: 90px;
     }
@@ -315,13 +316,13 @@ body {
         top: 30px;
         width: 350px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         bottom: 30px;
         width: 140px;
         height: 140px;
     }
-        
+
     #mainMenuPlayButton {
         right: 70px;
     }
@@ -335,12 +336,12 @@ body {
     #rusticCitrusLogo {
         width: 500px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         width: 225px;
         height: 225px;
     }
-    
+
     #mainMenuPlayButton {
         right: 70px;
     }
@@ -354,12 +355,12 @@ body {
     #rusticCitrusLogo {
         width: 450px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         width: 200px;
         height: 200px;
     }
-    
+
     #mainMenuPlayButton {
         right: 70px;
     }
@@ -374,13 +375,13 @@ body {
         top: 25px;
         width: 400px;
     }
-    
+
     %mainMenuLargeOrangeButton {
         bottom: 220px;
         width: 190px;
         height: 190px;
     }
-    
+
     #mainMenuPlayButton {
         right: 70px;
     }
