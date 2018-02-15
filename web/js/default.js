@@ -1,6 +1,6 @@
 $(function() {
   // Connect to Firebase
-  var rootRef = new Firebase("https://rusticcitrus.firebaseio.com");
+  var rootRef = new Firebase("https://rustic-citrus.firebaseio.com");
 
   $("#mainMenuScreenshot").fadeIn(1000, function() {
     $(this).attr("style", "display: block");
@@ -163,7 +163,7 @@ $(function() {
     // Validate the email
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (re.test(email)) {
-      rootRef.child("rcWebsiteEmailFormEmails").push(email, function(error) {
+      rootRef.child("websiteFormEmails").push(email, function(error) {
         if (error) {
           // TODO: add a different error message
           $("#invalidEmailWarning").fadeIn(400);

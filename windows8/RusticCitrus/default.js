@@ -177,10 +177,10 @@
 
         // Store a reference to the base of the RC firebase
         if (RC.useDevFirebaseRoot) {
-            RC.firebaseRoot = new Firebase("https://rusticcitrus.firebaseio.com/dev");
+            RC.firebaseRoot = new Firebase("https://rustic-citrus.firebaseio.com/dev");
         }
         else {
-            RC.firebaseRoot = new Firebase("https://rusticcitrus.firebaseio.com/prod");
+            RC.firebaseRoot = new Firebase("https://rustic-citrus.firebaseio.com/prod");
         }
 
         // Store the smallest number of letters in a round
